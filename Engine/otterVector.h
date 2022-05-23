@@ -38,5 +38,8 @@ namespace otterEngine {
 		//dot product
 		float operator*(const otterVector& v) const;
 		float dot(const otterVector& v) const;
+
+		//cross product
+		otterVector cross(const otterVector& v) const;
 	};
 }

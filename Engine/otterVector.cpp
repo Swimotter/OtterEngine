@@ -73,4 +73,11 @@ namespace otterEngine {
 	float otterVector::dot(const otterVector& v) const {
 		return x * v.x + y * v.y + z * v.z;
 	}
+
+	//cross product
+	otterVector otterVector::cross(const otterVector& v) const {
+		return otterVector(y * v.z - z * v.y,
+			z * v.x - x * v.z,
+			x * v.y - y * v.x);
+	}
 }
