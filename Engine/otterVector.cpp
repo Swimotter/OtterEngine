@@ -87,6 +87,11 @@ namespace otterEngine {
 		return std::sqrt(x * x + y * y + z * z);
 	}
 
+	//sqr magnitude
+	float otterVector::sqrMagnitude() {
+		return x * x + y * y + z * z;
+	}
+
 	//normalize
 	void otterVector::normalize() {
 		float mag = magnitude();

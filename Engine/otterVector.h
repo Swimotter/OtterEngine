@@ -45,6 +45,9 @@ namespace otterEngine {
 		//magnitude
 		float magnitude();
 
+		//sqr magnitude
+		float sqrMagnitude();
+
 		//normalize
 		void normalize();
 	};
