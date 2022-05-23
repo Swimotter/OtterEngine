@@ -1,4 +1,5 @@
 #include "otterVector.h"
+#include <iostream>
 
 namespace otterEngine {
 	//constructors
@@ -79,5 +80,10 @@ namespace otterEngine {
 		return otterVector(y * v.z - z * v.y,
 			z * v.x - x * v.z,
 			x * v.y - y * v.x);
+	}
+
+	//magnitude
+	float otterVector::magnitude() {
+		return std::sqrt(x * x + y * y + z * z);
 	}
 }

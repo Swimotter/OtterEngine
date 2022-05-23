@@ -41,5 +41,8 @@ namespace otterEngine {
 
 		//cross product
 		otterVector cross(const otterVector& v) const;
+
+		//magnitude
+		float magnitude();
 	};
 }
