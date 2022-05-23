@@ -33,4 +33,14 @@ namespace otterEngine {
 	otterVector otterVector::operator+(const otterVector& v) const {
 		return otterVector(x + v.x, y + v.y, z + v.z);
 	}
+
+	//vector subtraction
+	void otterVector::operator-=(const otterVector& v) {
+		x -= v.x;
+		y -= v.y;
+		z -= v.z;
+	}
+	otterVector otterVector::operator-(const otterVector& v) {
+		return otterVector(x - v.x, y - v.y, z - v.z);
+	}
 }
