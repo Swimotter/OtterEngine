@@ -1,3 +1,5 @@
+#include "otterVector.h"
+
 namespace otterEngine {
 	//constructors
 	otterVector::otterVector() :
@@ -40,7 +42,7 @@ namespace otterEngine {
 		y -= v.y;
 		z -= v.z;
 	}
-	otterVector otterVector::operator-(const otterVector& v) {
+	otterVector otterVector::operator-(const otterVector& v) const {
 		return otterVector(x - v.x, y - v.y, z - v.z);
 	}
 

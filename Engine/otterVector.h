@@ -10,7 +10,7 @@ namespace otterEngine {
 
 		//constructors
 		otterVector();
-		otterVector(float _x, float_y, float _z);
+		otterVector(float _x, float _y, float _z);
 
 		//destructor
 		~otterVector();
@@ -18,5 +18,21 @@ namespace otterEngine {
 		//copy constructors
 		otterVector(const otterVector& v);
 		otterVector& operator=(const otterVector& v);
+
+		//addition
+		void operator+=(const otterVector& v);
+		otterVector operator+(const otterVector& v) const;
+
+		//subtraction
+		void operator-=(const otterVector& v);
+		otterVector operator-(const otterVector& v) const;
+
+		//scalar multiplication
+		void operator*=(const float s);
+		otterVector operator*(const float s) const;
+
+		//scalar division
+		void operator/=(const float s);
+		otterVector operator/(const float s) const;
 	};
 }
