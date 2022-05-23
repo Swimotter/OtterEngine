@@ -53,4 +53,14 @@ namespace otterEngine {
 	otterVector otterVector::operator*(const float s) const {
 		return otterVector(x * s, y * s, z * s);
 	}
+
+	//scalar division
+	void otterVector::operator/=(const float s) {
+		x /= s;
+		y /= s;
+		z /= s;
+	}
+	otterVector otterVector::operator/(const float s) const {
+		return otterVector(x / s, y / s, z / s);
+	}
 }
