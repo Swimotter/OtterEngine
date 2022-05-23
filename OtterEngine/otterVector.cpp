@@ -23,4 +23,10 @@ namespace otterEngine {
 		z = v.z;
 		return *this;
 	}
+
+	void otterVector::operator+=(const otterVector& v) {
+		x += v.x;
+		y += v.y;
+		z += v.z;
+	}
 }
