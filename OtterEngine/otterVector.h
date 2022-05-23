@@ -12,7 +12,7 @@ namespace otterEngine {
 		otterVector();
 		otterVector(float _x, float_y, float _z);
 
-		//deconstructor
+		//destructor
 		~otterVector();
 
 		//copy constructors
