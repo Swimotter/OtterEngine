@@ -24,9 +24,13 @@ namespace otterEngine {
 		return *this;
 	}
 
+	//vector addition
 	void otterVector::operator+=(const otterVector& v) {
 		x += v.x;
 		y += v.y;
 		z += v.z;
+	}
+	otterVector otterVector::operator+(const otterVector& v) const {
+		return otterVector(x + v.x, y + v.y, z + v.z);
 	}
 }
