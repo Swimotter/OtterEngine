@@ -1,3 +1,4 @@
+#pragma once
 namespace otterEngine {
 	class otterVector {
 	private:
