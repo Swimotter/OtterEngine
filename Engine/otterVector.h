@@ -34,5 +34,9 @@ namespace otterEngine {
 		//scalar division
 		void operator/=(const float s);
 		otterVector operator/(const float s) const;
+
+		//dot product
+		float operator*(const otterVector& v) const;
+		float dot(const otterVector& v) const;
 	};
 }

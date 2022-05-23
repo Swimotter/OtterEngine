@@ -65,4 +65,12 @@ namespace otterEngine {
 	otterVector otterVector::operator/(const float s) const {
 		return otterVector(x / s, y / s, z / s);
 	}
+
+	//dot product
+	float otterVector::operator*(const otterVector& v) const {
+		return x * v.x + y * v.y + z * v.z;
+	}
+	float otterVector::dot(const otterVector& v) const {
+		return x * v.x + y * v.y + z * v.z;
+	}
 }

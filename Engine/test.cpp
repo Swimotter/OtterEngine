@@ -7,4 +7,7 @@ int main() {
 	otterVector vector2(4, 5, 6);
 
 	otterVector vector3 = vector1 + vector2;
+	vector1 += vector2;
+
+	return 0;
 }
