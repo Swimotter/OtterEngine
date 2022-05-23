@@ -5,7 +5,7 @@ namespace otterEngine {
 	
 	public:
 		//matrix elements
-		float matrixElements[9] = { 0.0f };
+		float matrixElement[9] = { 0.0f };
 
 		//constructors
 		otterMatrix();
