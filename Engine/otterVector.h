@@ -39,17 +39,22 @@ namespace otterEngine {
 		//dot product
 		float operator*(const otterVector& v) const;
 		float dot(const otterVector& v) const;
+		static float dot(const otterVector& v1, const otterVector& v2);
 
 		//cross product
 		otterVector cross(const otterVector& v) const;
+		static otterVector cross(const otterVector& v1, const otterVector& v2);
 
 		//magnitude
 		float magnitude();
+		static float magnitude(const otterVector& v);
 
 		//sqr magnitude
 		float sqrMagnitude();
+		static float sqrMagnitude(const otterVector& v);
 
 		//normalize
 		void normalize();
+		static void normalize(const otterVector& v);
 	};
 }
