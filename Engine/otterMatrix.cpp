@@ -97,7 +97,7 @@ namespace otterEngine {
 
 	//matrix multiplication
 	void otterMatrix::operator*=(const otterMatrix& m) {
-		*this = otterMatrix::operator*(m);
+		*this = *this*(m);
 	}
 	otterMatrix& otterMatrix::operator*(const otterMatrix& m) const {
 		otterMatrix newMatrix;

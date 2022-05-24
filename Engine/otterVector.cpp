@@ -96,7 +96,7 @@ namespace otterEngine {
 	void otterVector::normalize() {
 		float mag = magnitude();
 		if (mag > 0.0f) {
-			otterVector::operator/=(mag);
+			*this/=(mag);
 		}
 	}
 }
