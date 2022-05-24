@@ -5,7 +5,7 @@ namespace otterEngine {
 	//constructors
 	//
 	//3x3 matrix--column major
-	//0	3 6
+	//0 3 6
 	//1 4 7
 	//2 5 8
 	otterMatrix::otterMatrix() {
@@ -95,9 +95,9 @@ namespace otterEngine {
 		return newMatrix;
 	}
 
-	//matrix multiplication
+	//matrix product
 	void otterMatrix::operator*=(const otterMatrix& m) {
-		*this = *this*(m);
+		*this = *this * m;
 	}
 	otterMatrix& otterMatrix::operator*(const otterMatrix& m) const {
 		otterMatrix newMatrix;
@@ -108,9 +108,32 @@ namespace otterEngine {
 		}
 		return newMatrix;
 	}
+	otterMatrix& otterMatrix::matrixProduct(const otterMatrix& m) const {
+		otterMatrix newMatrix;
+		for (int i = 0; i < 9; i++) {
+			newMatrix.matrixElement[i] = matrixElement[i % 3] * m.matrixElement[i / 3 * 3] +
+				matrixElement[i % 3 + 3] * m.matrixElement[i / 3 * 3 + 1] +
+				matrixElement[i % 3 + 6] * m.matrixElement[i / 3 * 3 + 2];
+		}
+		return newMatrix;
+	}
+	otterMatrix& otterMatrix::matrixProduct(const otterMatrix& m1, const otterMatrix& m2) {
+		otterMatrix newMatrix;
+		for (int i = 0; i < 9; i++) {
+			newMatrix.matrixElement[i] = m1.matrixElement[i % 3] * m2.matrixElement[i / 3 * 3] +
+				m1.matrixElement[i % 3 + 3] * m2.matrixElement[i / 3 * 3 + 1] +
+				m1.matrixElement[i % 3 + 6] * m2.matrixElement[i / 3 * 3 + 2];
+		}
+		return newMatrix;
+	}
 
 	//identity matrix
+	/*
 	void otterMatrix::identity() {
 		*this = otterMatrix();
+	}
+	*/
+	otterMatrix& otterMatrix::identity() {
+		otterMatrix();
 	}
 }
