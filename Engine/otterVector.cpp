@@ -113,10 +113,16 @@ namespace otterEngine {
 			*this/=(mag);
 		}
 	}
-	void otterVector::normalize(const otterVector& v) {
+	otterVector& otterVector::normalize(const otterVector& v) {
 		float mag = magnitude(v);
 		if (mag > 0.0f) {
-			v / (mag);
+			return v / (mag);
 		}
+	}
+
+	//zero vector
+	otterVector& otterVector::zero() {
+		otterVector v;
+		return v;
 	}
 }

@@ -134,6 +134,7 @@ namespace otterEngine {
 	}
 	*/
 	otterMatrix& otterMatrix::identity() {
-		otterMatrix();
+		otterMatrix m;
+		return m;
 	}
 }

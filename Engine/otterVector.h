@@ -55,6 +55,9 @@ namespace otterEngine {
 
 		//normalize
 		void normalize();
-		static void normalize(const otterVector& v);
+		static otterVector& normalize(const otterVector& v);
+
+		//zero vector
+		static otterVector& zero();
 	};
 }
