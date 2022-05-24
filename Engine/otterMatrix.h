@@ -24,5 +24,9 @@ namespace otterEngine {
 		//matrix subtraction
 		void operator-=(const otterMatrix& m);
 		otterMatrix& operator-(const otterMatrix& m) const;
+
+		//scalar multiplication
+		void operator*=(const float s);
+		otterMatrix& operator*(const float s) const;
 	};
 }
