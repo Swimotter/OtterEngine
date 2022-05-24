@@ -36,11 +36,9 @@ namespace otterEngine {
 		//matrix product
 		void operator*=(const otterMatrix& m);
 		otterMatrix& operator*(const otterMatrix& m) const;
-		otterMatrix& matrixProduct(const otterMatrix& m) const;
 		static otterMatrix& matrixProduct(const otterMatrix& m1, const otterMatrix& m2);
 
 		//identity matrix
-		//void identity();
 		static otterMatrix& identity();
 	};
 }

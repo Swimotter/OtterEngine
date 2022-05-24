@@ -54,7 +54,7 @@ namespace otterEngine {
 		static float sqrMagnitude(const otterVector& v);
 
 		//normalize
-		void normalize();
+		void normalized();
 		static otterVector& normalize(const otterVector& v);
 
 		//zero vector

@@ -108,15 +108,6 @@ namespace otterEngine {
 		}
 		return newMatrix;
 	}
-	otterMatrix& otterMatrix::matrixProduct(const otterMatrix& m) const {
-		otterMatrix newMatrix;
-		for (int i = 0; i < 9; i++) {
-			newMatrix.matrixElement[i] = matrixElement[i % 3] * m.matrixElement[i / 3 * 3] +
-				matrixElement[i % 3 + 3] * m.matrixElement[i / 3 * 3 + 1] +
-				matrixElement[i % 3 + 6] * m.matrixElement[i / 3 * 3 + 2];
-		}
-		return newMatrix;
-	}
 	otterMatrix& otterMatrix::matrixProduct(const otterMatrix& m1, const otterMatrix& m2) {
 		otterMatrix newMatrix;
 		for (int i = 0; i < 9; i++) {
@@ -128,11 +119,6 @@ namespace otterEngine {
 	}
 
 	//identity matrix
-	/*
-	void otterMatrix::identity() {
-		*this = otterMatrix();
-	}
-	*/
 	otterMatrix& otterMatrix::identity() {
 		otterMatrix m;
 		return m;
