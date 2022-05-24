@@ -20,5 +20,9 @@ namespace otterEngine {
 		//matrix addition
 		void operator+=(const otterMatrix& m);
 		otterMatrix& operator+(const otterMatrix& m) const;
+
+		//matrix subtraction
+		void operator-=(const otterMatrix& m);
+		otterMatrix& operator-(const otterMatrix& m) const;
 	};
 }

@@ -47,7 +47,21 @@ namespace otterEngine {
 	otterMatrix& otterMatrix::operator+(const otterMatrix& m) const {
 		otterMatrix newMatrix;
 		for (int i = 0; i < 9; i++) {
-			newMatrix[i] = matrixElement[i] + m.matrixElement[i];
+			newMatrix.matrixElement[i] = matrixElement[i] + m.matrixElement[i];
+		}
+		return newMatrix;
+	}
+
+	//matrix subtraction
+	void otterMatrix::operator-=(const otterMatrix& m) {
+		for (int i = 0; i < 9; i++) {
+			matrixElement[i] -= m.matrixElement[i];
+		}
+	}
+	otterMatrix& otterMatrix::operator-(const otterMatrix& m) const {
+		otterMatrix newMatrix;
+		for (int i = 0; i < 9; i++) {
+			newMatrix.matrixElement[i] = matrixElement[i] - m.matrixElement[i];
 		}
 		return newMatrix;
 	}
