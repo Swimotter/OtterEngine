@@ -36,6 +36,7 @@ namespace otterEngine {
 		for (int i = 0; i < 9; i++) {
 			matrixElement[i] = m.matrixElement[i];
 		}
+		return *this;
 	}
 
 	//matrix addition
