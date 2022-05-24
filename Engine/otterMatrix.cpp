@@ -108,4 +108,9 @@ namespace otterEngine {
 		}
 		return newMatrix;
 	}
+
+	//identity matrix
+	void otterMatrix::identity() {
+		*this = otterMatrix();
+	}
 }

@@ -36,5 +36,8 @@ namespace otterEngine {
 		//matrix multiplication
 		void operator*=(const otterMatrix& m);
 		otterMatrix& operator*(const otterMatrix& m) const;
+
+		//identity matrix
+		void identity();
 	};
 }
