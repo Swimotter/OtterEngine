@@ -32,5 +32,9 @@ namespace otterEngine {
 		//scalar division
 		void operator/=(const float s);
 		otterMatrix& operator/(const float s) const;
+
+		//matrix multiplication
+		void operator*=(const otterMatrix& m);
+		otterMatrix& operator*(const otterMatrix& m) const;
 	};
 }

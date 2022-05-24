@@ -94,4 +94,18 @@ namespace otterEngine {
 		}
 		return newMatrix;
 	}
+
+	//matrix multiplication
+	void otterMatrix::operator*=(const otterMatrix& m) {
+		*this = otterMatrix::operator*(m);
+	}
+	otterMatrix& otterMatrix::operator*(const otterMatrix& m) const {
+		otterMatrix newMatrix;
+		for (int i = 0; i < 9; i++) {
+			newMatrix.matrixElement[i] = matrixElement[i % 3] * m.matrixElement[i / 3 * 3] +
+				matrixElement[i % 3 + 3] * m.matrixElement[i / 3 * 3 + 1] +
+				matrixElement[i % 3 + 6] * m.matrixElement[i / 3 * 3 + 2];
+		}
+		return newMatrix;
+	}
 }
