@@ -28,5 +28,9 @@ namespace otterEngine {
 		//scalar multiplication
 		void operator*=(const float s);
 		otterMatrix& operator*(const float s) const;
+
+		//scalar division
+		void operator/=(const float s);
+		otterMatrix& operator/(const float s) const;
 	};
 }

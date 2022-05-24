@@ -79,4 +79,18 @@ namespace otterEngine {
 		}
 		return newMatrix;
 	}
+
+	//scalar division
+	void otterMatrix::operator/=(const float s) {
+		for (int i = 0; i < 9; i++) {
+			matrixElement[i] /= s;
+		}
+	}
+	otterMatrix& otterMatrix::operator/(const float s) const {
+		otterMatrix newMatrix;
+		for (int i = 0; i < 9; i++) {
+			newMatrix.matrixElement[i] = matrixElement[i] / s;
+		}
+		return newMatrix;
+	}
 }
