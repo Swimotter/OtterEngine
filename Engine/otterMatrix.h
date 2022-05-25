@@ -40,5 +40,9 @@ namespace otterEngine {
 
 		//identity matrix
 		static otterMatrix& identity();
+
+		//determinant
+		float determinant() const;
+		static float determinant(const otterMatrix& m);
 	};
 }

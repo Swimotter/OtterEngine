@@ -80,9 +80,7 @@ namespace otterEngine {
 
 	//cross product
 	otterVector otterVector::cross(const otterVector& v) const {
-		return otterVector(y * v.z - z * v.y,
-			z * v.x - x * v.z,
-			x * v.y - y * v.x);
+		return cross(*this, v);
 	}
 	otterVector otterVector::cross(const otterVector& v1, const otterVector& v2) {
 		return otterVector(v1.y * v2.z - v1.z * v2.y,
@@ -92,7 +90,7 @@ namespace otterEngine {
 
 	//magnitude
 	float otterVector::magnitude() {
-		return std::sqrt(x * x + y * y + z * z);
+		return magnitude(*this);
 	}
 	float otterVector::magnitude(const otterVector& v) {
 		return std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
@@ -100,7 +98,7 @@ namespace otterEngine {
 
 	//sqr magnitude
 	float otterVector::sqrMagnitude() {
-		return x * x + y * y + z * z;
+		return sqrMagnitude(*this);
 	}
 	float otterVector::sqrMagnitude(const otterVector& v) {
 		return v.x * v.x + v.y * v.y + v.z * v.z;
@@ -108,16 +106,15 @@ namespace otterEngine {
 
 	//normalize
 	void otterVector::normalized() {
-		float mag = magnitude();
-		if (mag > 0.0f) {
-			*this/=(mag);
-		}
+		*this = normalize(*this);
 	}
-	otterVector& otterVector::normalize(const otterVector& v) {
-		float mag = magnitude(v);
+	otterVector& otterVector::normalize(otterVector& v) {
+		float mag = v.magnitude();
 		if (mag > 0.0f) {
-			return v / (mag);
+			v /= mag;
+			return v;
 		}
+		return v;
 	}
 
 	//zero vector

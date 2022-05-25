@@ -123,4 +123,20 @@ namespace otterEngine {
 		otterMatrix m;
 		return m;
 	}
+
+	//determinant
+	float otterMatrix::determinant() const {
+		return determinant(*this);
+	}
+	float otterMatrix::determinant(const otterMatrix& m) {
+		float output = 0;
+		for (int i = 0; i < 3; i++) {
+			output += m.matrixElement[i * 3] *
+				(m.matrixElement[((i + 1) * 3 + 1) % 9] *
+					m.matrixElement[((i + 1) * -6 + 5) % 9] -
+				m.matrixElement[((i + 1) * -6 + 4) % 9] *
+					m.matrixElement[((i + 1) * 3 + 2) % 9]);
+		}
+		return output;
+	}
 }
