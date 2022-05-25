@@ -44,5 +44,9 @@ namespace otterEngine {
 		//determinant
 		float determinant() const;
 		static float determinant(const otterMatrix& m);
+
+		//transpose
+		void transpose();
+		static otterMatrix& transpose(const otterMatrix& m);
 	};
 }

@@ -100,13 +100,7 @@ namespace otterEngine {
 		*this = *this * m;
 	}
 	otterMatrix& otterMatrix::operator*(const otterMatrix& m) const {
-		otterMatrix newMatrix;
-		for (int i = 0; i < 9; i++) {
-			newMatrix.matrixElement[i] = matrixElement[i % 3] * m.matrixElement[i / 3 * 3] +
-				matrixElement[i % 3 + 3] * m.matrixElement[i / 3 * 3 + 1] +
-				matrixElement[i % 3 + 6] * m.matrixElement[i / 3 * 3 + 2];
-		}
-		return newMatrix;
+		return matrixProduct(*this, m);
 	}
 	otterMatrix& otterMatrix::matrixProduct(const otterMatrix& m1, const otterMatrix& m2) {
 		otterMatrix newMatrix;
@@ -138,5 +132,31 @@ namespace otterEngine {
 					m.matrixElement[((i + 1) * 3 + 2) % 9]);
 		}
 		return output;
+	}
+
+	//transpose
+	void otterMatrix::transpose() {
+		float temp = matrixElement[1];
+		matrixElement[1] = matrixElement[3];
+		matrixElement[3] = temp;
+		temp = matrixElement[2];
+		matrixElement[2] = matrixElement[6];
+		matrixElement[6] = temp;
+		temp = matrixElement[5];
+		matrixElement[5] = matrixElement[7];
+		matrixElement[7] = temp;
+	}
+	otterMatrix& otterMatrix::transpose(const otterMatrix& m) {
+		otterMatrix newMatrix = otterMatrix(
+			m.matrixElement[0],
+			m.matrixElement[3],
+			m.matrixElement[6],
+			m.matrixElement[1],
+			m.matrixElement[4],
+			m.matrixElement[7],
+			m.matrixElement[2],
+			m.matrixElement[5],
+			m.matrixElement[8]);
+		return newMatrix;
 	}
 }
