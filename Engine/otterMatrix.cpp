@@ -183,4 +183,12 @@ namespace otterEngine {
 		}*/
 		return newMatrix;
 	}
+
+	//inverse
+	void otterMatrix::invert() {
+		*this = inverse(*this)
+	}
+	otterMatrix& otterMatrix::inverse(const otterMatrix& m) {
+		return adjugate(m) / determinant(m);
+	}
 }
