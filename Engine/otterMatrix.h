@@ -48,5 +48,9 @@ namespace otterEngine {
 		//transpose
 		void transpose();
 		static otterMatrix& transpose(const otterMatrix& m);
+
+		//adjugate
+		void adjugate();
+		static otterMatrix& adjugate(otterMatrix& m);
 	};
 }
