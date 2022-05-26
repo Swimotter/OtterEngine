@@ -163,7 +163,7 @@ namespace otterEngine {
 	void otterMatrix::adjugate() {
 		*this = adjugate(*this);
 	}
-	otterMatrix& otterMatrix::adjugate(otterMatrix& m) {
+	otterMatrix& otterMatrix::adjugate(const otterMatrix& m) {
 		otterMatrix newMatrix = otterMatrix();
 		float invd = 1.0f / determinant(m);
 		newMatrix.matrixElement[0] = (m.matrixElement[4] * m.matrixElement[8] - m.matrixElement[5] * m.matrixElement[7]) * invd;

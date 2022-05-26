@@ -51,6 +51,10 @@ namespace otterEngine {
 
 		//adjugate
 		void adjugate();
-		static otterMatrix& adjugate(otterMatrix& m);
+		static otterMatrix& adjugate(const otterMatrix& m);
+
+		//inverse
+		void invert();
+		static otterMatrix& inverse(const otterMatrix& m);
 	};
 }
