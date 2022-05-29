@@ -139,7 +139,7 @@ namespace otterEngine {
 			matrixElement[2] * v.x + matrixElement[5] * v.y + matrixElement[8] * v.z);
 		return newVector;
 	}
-	static otterVector& vectorTransformation(const otterMatrix& m, const otterVector& v) {
+	otterVector& otterMatrix::vectorTransformation(const otterMatrix& m, const otterEngine::otterVector& v) {
 		return m * v;
 	}
 

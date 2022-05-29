@@ -43,7 +43,7 @@ namespace otterEngine {
 
 		//vector transformation
 		otterVector& operator*(const otterVector& v) const;
-		static otterMatrix& vectorTransformation(const otterMatrix& m, const otterVector& m2);
+		static otterVector& vectorTransformation(const otterMatrix& m, const otterVector& v);
 
 		//identity matrix
 		static otterMatrix& identity();
