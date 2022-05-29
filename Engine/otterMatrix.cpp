@@ -1,4 +1,5 @@
 #include "otterMatrix.h"
+#include "otterVector.h"
 #include <iostream>
 
 namespace otterEngine {
@@ -128,6 +129,18 @@ namespace otterEngine {
 				m1.matrixElement[i % 3 + 6] * m2.matrixElement[i / 3 * 3 + 2];
 		}*/
 		return newMatrix;
+	}
+
+	//vector transformation
+	otterVector& otterMatrix::operator*(const otterVector& v) const {
+		otterVector newVector = otterVector(
+			matrixElement[0] * v.x + matrixElement[3] * v.y + matrixElement[6] * v.z,
+			matrixElement[1] * v.x + matrixElement[4] * v.y + matrixElement[7] * v.z,
+			matrixElement[2] * v.x + matrixElement[5] * v.y + matrixElement[8] * v.z);
+		return newVector;
+	}
+	static otterVector& vectorTransformation(const otterMatrix& m, const otterVector& v) {
+		return m * v;
 	}
 
 	//identity matrix

@@ -1,4 +1,6 @@
 #pragma once
+#include "otterVector.h"
+
 namespace otterEngine {
 	class otterMatrix {
 	private:
@@ -38,6 +40,10 @@ namespace otterEngine {
 		void operator*=(const otterMatrix& m);
 		otterMatrix& operator*(const otterMatrix& m) const;
 		static otterMatrix& matrixProduct(const otterMatrix& m1, const otterMatrix& m2);
+
+		//vector transformation
+		otterVector& operator*(const otterVector& v) const;
+		static otterMatrix& vectorTransformation(const otterMatrix& m, const otterVector& m2);
 
 		//identity matrix
 		static otterMatrix& identity();
