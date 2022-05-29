@@ -17,8 +17,8 @@ namespace otterEngine {
 		~otterVector();
 
 		//copy constructors
-		otterVector(const otterVector& v);
-		otterVector& operator=(const otterVector& v);
+		/*otterVector(const otterVector& v);
+		otterVector& operator=(const otterVector& v);*/
 
 		//addition
 		void operator+=(const otterVector& v);

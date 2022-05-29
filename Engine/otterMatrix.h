@@ -15,8 +15,8 @@ namespace otterEngine {
 		~otterMatrix();
 
 		//copy constructor
-		otterMatrix(const otterMatrix& m);
-		otterMatrix& operator=(const otterMatrix& m);
+		/*otterMatrix(const otterMatrix& m);
+		otterMatrix& operator=(const otterMatrix& m);*/
 
 		//matrix addition
 		void operator+=(const otterMatrix& m);
