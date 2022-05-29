@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClInclude Include="otterMatrix.h" />
     <ClInclude Include="otterVector.h" />
+    <ClInclude Include="otterQuaternion.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="otterMatrix.cpp" />
     <ClCompile Include="otterVector.cpp" />
+    <ClCompile Include="otterQuaternion.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

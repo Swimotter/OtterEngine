@@ -21,6 +21,9 @@
     <ClInclude Include="otterMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="otterQuaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="otterVector.cpp">
@@ -30,6 +33,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="otterMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="otterQuaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
