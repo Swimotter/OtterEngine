@@ -12,7 +12,7 @@ namespace otterEngine {
 		for (int i = 0; i < 9; i++) {
 			matrixElement[i] = 0.0f;
 		}
-		matrixElement[0] = matrixElement[4] = matrixElement[8] = 1.0f;
+		matrixElement[0] = matrixElement[4] = matrixElement[8] = 1.0;
 	}
 	otterMatrix::otterMatrix(float _0, float _3, float _6, float _1, float _4, float _7, float _2, float _5, float _8) {
 		matrixElement[0] = (_0);
@@ -32,6 +32,11 @@ namespace otterEngine {
 	otterMatrix::~otterMatrix() {};
 
 	//copy constructor
+	otterMatrix::otterMatrix(const otterMatrix& m) {
+		for (int i = 0; i < 9; i++) {
+			matrixElement[i] = m.matrixElement[i];
+		};
+	}
 	otterMatrix& otterMatrix::operator=(const otterMatrix& m) {
 		for (int i = 0; i < 9; i++) {
 			matrixElement[i] = m.matrixElement[i];
@@ -103,12 +108,25 @@ namespace otterEngine {
 		return matrixProduct(*this, m);
 	}
 	otterMatrix& otterMatrix::matrixProduct(const otterMatrix& m1, const otterMatrix& m2) {
-		otterMatrix newMatrix;
+		otterMatrix newMatrix = otterMatrix(
+			m1.matrixElement[0] * m2.matrixElement[0] + m1.matrixElement[3] * m2.matrixElement[1] + m1.matrixElement[6] * m2.matrixElement[2],
+			m1.matrixElement[0] * m2.matrixElement[3] + m1.matrixElement[3] * m2.matrixElement[4] + m1.matrixElement[6] * m2.matrixElement[5],
+			m1.matrixElement[0] * m2.matrixElement[6] + m1.matrixElement[3] * m2.matrixElement[7] + m1.matrixElement[6] * m2.matrixElement[8],
+
+			m1.matrixElement[1] * m2.matrixElement[0] + m1.matrixElement[4] * m2.matrixElement[1] + m1.matrixElement[7] * m2.matrixElement[2],
+			m1.matrixElement[1] * m2.matrixElement[3] + m1.matrixElement[4] * m2.matrixElement[4] + m1.matrixElement[7] * m2.matrixElement[5],
+			m1.matrixElement[1] * m2.matrixElement[6] + m1.matrixElement[4] * m2.matrixElement[7] + m1.matrixElement[7] * m2.matrixElement[8],
+
+			m1.matrixElement[2] * m2.matrixElement[0] + m1.matrixElement[5] * m2.matrixElement[1] + m1.matrixElement[8] * m2.matrixElement[2],
+			m1.matrixElement[2] * m2.matrixElement[3] + m1.matrixElement[5] * m2.matrixElement[4] + m1.matrixElement[8] * m2.matrixElement[5],
+			m1.matrixElement[2] * m2.matrixElement[6] + m1.matrixElement[5] * m2.matrixElement[7] + m1.matrixElement[8] * m2.matrixElement[8]);
+		
+		/*otterMatrix newMatrix;
 		for (int i = 0; i < 9; i++) {
 			newMatrix.matrixElement[i] = m1.matrixElement[i % 3] * m2.matrixElement[i / 3 * 3] +
 				m1.matrixElement[i % 3 + 3] * m2.matrixElement[i / 3 * 3 + 1] +
 				m1.matrixElement[i % 3 + 6] * m2.matrixElement[i / 3 * 3 + 2];
-		}
+		}*/
 		return newMatrix;
 	}
 
@@ -125,7 +143,6 @@ namespace otterEngine {
 	float otterMatrix::determinant(const otterMatrix& m) {
 		float output = 0;
 		for (int i = 0; i < 3; i++) {
-			std::cout << (((i + 1) * 3 + 1) % 9 + 9) % 9 << ',' << (((i + 1) * -6 + 5) % 9 + 9) % 9 << ',' << (((i + 1) * -6 + 4) % 9 + 9) % 9 << ',' << (((i + 1) * 3 + 2) % 9 + 9) % 9 << '\n';
 			output += m.matrixElement[i * 3] *
 				(m.matrixElement[(((i + 1) * 3 + 1) % 9 + 9) % 9] * m.matrixElement[(((i + 1) * -6 + 5) % 9 + 9) % 9] -
 				m.matrixElement[(((i + 1) * -6 + 4) % 9 + 9) % 9] * m.matrixElement[(((i + 1) * 3 + 2) % 9 + 9) % 9]);
@@ -165,30 +182,30 @@ namespace otterEngine {
 	}
 	otterMatrix& otterMatrix::adjugate(const otterMatrix& m) {
 		otterMatrix newMatrix = otterMatrix();
-		float invd = 1.0f / determinant(m);
-		newMatrix.matrixElement[0] = (m.matrixElement[4] * m.matrixElement[8] - m.matrixElement[5] * m.matrixElement[7]) * invd;
-		newMatrix.matrixElement[1] = (m.matrixElement[3] * m.matrixElement[8] - m.matrixElement[5] * m.matrixElement[6]) * invd;
-		newMatrix.matrixElement[2] = (m.matrixElement[3] * m.matrixElement[7] - m.matrixElement[4] * m.matrixElement[6]) * invd;
-		newMatrix.matrixElement[3] = (m.matrixElement[1] * m.matrixElement[8] - m.matrixElement[2] * m.matrixElement[7]) * invd;
-		newMatrix.matrixElement[4] = (m.matrixElement[0] * m.matrixElement[8] - m.matrixElement[2] * m.matrixElement[6]) * invd;
-		newMatrix.matrixElement[5] = (m.matrixElement[0] * m.matrixElement[7] - m.matrixElement[1] * m.matrixElement[6]) * invd;
-
-		newMatrix.matrixElement[6] = (m.matrixElement[1] * m.matrixElement[5] - m.matrixElement[2] * m.matrixElement[4]) * invd;
-		newMatrix.matrixElement[7] = (m.matrixElement[0] * m.matrixElement[5] - m.matrixElement[2] * m.matrixElement[3]) * invd;
-		newMatrix.matrixElement[8] = (m.matrixElement[0] * m.matrixElement[4] - m.matrixElement[1] * m.matrixElement[3]) * invd;
+		newMatrix.matrixElement[0] = (m.matrixElement[4] * m.matrixElement[8] - m.matrixElement[5] * m.matrixElement[7]);
+		newMatrix.matrixElement[1] = -(m.matrixElement[3] * m.matrixElement[8] - m.matrixElement[5] * m.matrixElement[6]);
+		newMatrix.matrixElement[2] = (m.matrixElement[3] * m.matrixElement[7] - m.matrixElement[4] * m.matrixElement[6]);
+		newMatrix.matrixElement[3] = -(m.matrixElement[1] * m.matrixElement[8] - m.matrixElement[2] * m.matrixElement[7]);
+		newMatrix.matrixElement[4] = (m.matrixElement[0] * m.matrixElement[8] - m.matrixElement[2] * m.matrixElement[6]);
+		newMatrix.matrixElement[5] = -(m.matrixElement[0] * m.matrixElement[7] - m.matrixElement[1] * m.matrixElement[6]);
+		newMatrix.matrixElement[6] = (m.matrixElement[1] * m.matrixElement[5] - m.matrixElement[2] * m.matrixElement[4]);
+		newMatrix.matrixElement[7] = -(m.matrixElement[0] * m.matrixElement[5] - m.matrixElement[2] * m.matrixElement[3]);
+		newMatrix.matrixElement[8] = (m.matrixElement[0] * m.matrixElement[4] - m.matrixElement[1] * m.matrixElement[3]);
 		/*for (int i = 0; i < 9; i++) {
 			newMatrix.matrixElement[i] =
 				m.matrixElement[((i + 1) * 17 - 4) % 9] * m.matrixElement[((i + 1) * -6 + 5) % 9] -
 				m.matrixElement[((i + 1) * -6 + 4) % 9] * m.matrixElement[((i + 1) * 3 + 2) % 9];
 		}*/
+		newMatrix.transpose();
 		return newMatrix;
 	}
 
 	//inverse
 	void otterMatrix::invert() {
-		*this = inverse(*this)
+		*this = inverse(*this);
 	}
 	otterMatrix& otterMatrix::inverse(const otterMatrix& m) {
-		return adjugate(m) / determinant(m);
+		otterMatrix adjuMatrix = adjugate(m);
+		return adjuMatrix / determinant(m);
 	}
 }
