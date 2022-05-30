@@ -1,5 +1,5 @@
 #pragma once
-namespace otterEngine {
+namespace otterMath {
 	class otterVector {
 	private:
 

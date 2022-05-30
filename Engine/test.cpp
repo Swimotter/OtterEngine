@@ -2,7 +2,7 @@
 #include "otterMatrix.h"
 
 
-using namespace otterEngine;
+using namespace otterMath;
 int main() {
 
 	otterMatrix matrix1(

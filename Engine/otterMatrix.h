@@ -1,6 +1,6 @@
 #pragma once
 
-namespace otterEngine {
+namespace otterMath {
 	class otterMatrix {
 	private:
 	

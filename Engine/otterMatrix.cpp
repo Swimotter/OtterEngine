@@ -2,7 +2,7 @@
 #include "otterVector.h"
 #include <iostream>
 
-namespace otterEngine {
+namespace otterMath {
 	//constructors
 	//
 	//3x3 matrix--column major

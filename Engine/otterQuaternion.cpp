@@ -2,7 +2,7 @@
 #include "otterVector.h"
 #include <iostream>
 
-namespace otterEngine {
+namespace otterMath {
 	//constructors
 	otterQuaternion::otterQuaternion() :
 		s(0.0),

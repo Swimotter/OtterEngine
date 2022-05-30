@@ -1,7 +1,7 @@
 #pragma once
 #include "otterVector.h"
 
-namespace otterEngine {
+namespace otterMath {
 	class otterQuaternion
 	{
 	private:
