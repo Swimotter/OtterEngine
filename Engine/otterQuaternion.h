@@ -31,6 +31,10 @@ namespace otterEngine {
 		//quaternion subtraction
 		void operator-=(const otterQuaternion& q);
 		otterQuaternion& operator-(const otterQuaternion& q) const;
+
+		//quaternion product
+		void operator*=(const otterQuaternion& q);
+		otterQuaternion& operator*(const otterQuaternion& q) const;
 	};
 }
 

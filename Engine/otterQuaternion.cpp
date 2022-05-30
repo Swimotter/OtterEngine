@@ -48,4 +48,17 @@ namespace otterEngine {
 		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
 		return newQuaternion;
 	}
+
+	//quaternion product
+	void otterQuaternion::operator*=(const otterQuaternion& q) {
+		s = s * q.s + v * q.v;
+		v = q.v * s + v * q.s + otterVector::cross(v, q.v);
+	}
+
+	otterQuaternion& otterQuaternion::operator*(const otterQuaternion& q) const {
+		float scalar = s * q.s + v * q.v;
+		otterVector vector = q.v * s + v * q.s + otterVector::cross(v, q.v);
+		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
+		return newQuaternion;
+	}
 }
