@@ -59,5 +59,8 @@ namespace otterEngine {
 
 		//zero vector
 		static otterVector& zero();
+
+		//rotate vector
+		static otterVector& rotateVector(float _angle, otterVector& _axis);
 	};
 }

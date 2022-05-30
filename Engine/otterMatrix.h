@@ -1,5 +1,4 @@
 #pragma once
-#include "otterVector.h"
 
 namespace otterEngine {
 	class otterMatrix {

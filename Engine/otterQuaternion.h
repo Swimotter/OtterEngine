@@ -58,9 +58,6 @@ namespace otterEngine {
 
 		//inverse
 		static otterQuaternion& inverse(const otterQuaternion& q);
-
-		//rotate vector
-		static otterVector& rotateVector(const otterQuaternion& q, float _angle, otterVector& _axis);
 	};
 }
 

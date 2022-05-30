@@ -121,16 +121,4 @@ namespace otterEngine {
 		otterQuaternion newQuaternion = otterQuaternion(conj / sqrNorm);
 		return newQuaternion;
 	}
-
-	//rotate vector
-	otterVector& otterQuaternion::rotateVector(const otterQuaternion& q, float _angle, otterVector& _axis)
-	{
-		otterQuaternion imag(0, _axis);
-		_axis = otterVector::normalize(_axis);
-		otterQuaternion real(_angle, _axis);
-		otterQuaternion unit = unitNorm(q);
-		otterQuaternion invert = inverse(q);
-		otterQuaternion rotated = real * imag * invert;
-		return rotated.v;
-	}
 }

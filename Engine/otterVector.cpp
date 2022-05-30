@@ -1,4 +1,5 @@
 #include "otterVector.h"
+#include "otterQuaternion.h"
 #include <iostream>
 
 namespace otterEngine {
@@ -121,5 +122,17 @@ namespace otterEngine {
 	otterVector& otterVector::zero() {
 		otterVector v;
 		return v;
+	}
+
+	//rotate vector
+	otterVector& otterVector::rotateVector(float _angle, otterVector& _axis)
+	{
+		otterQuaternion imag(0, _axis);
+		_axis = otterVector::normalize(_axis);
+		otterQuaternion real(_angle, _axis);
+		otterQuaternion unit = otterQuaternion::unitNorm(real);
+		otterQuaternion invert = otterQuaternion::inverse(real);
+		otterQuaternion rotated = real * imag * invert;
+		return rotated.v;
 	}
 }
