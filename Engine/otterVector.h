@@ -4,7 +4,7 @@ namespace otterMath {
 	private:
 
 	public:
-		//position in cartesian coordinates
+		//x, y, z components of vector
 		float x;
 		float y;
 		float z;
