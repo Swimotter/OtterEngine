@@ -32,6 +32,10 @@ namespace otterEngine {
 		void operator-=(const otterQuaternion& q);
 		otterQuaternion& operator-(const otterQuaternion& q) const;
 
+		//scalar multiplication
+		void operator*=(const float s);
+		otterQuaternion& operator*(const float s) const;
+
 		//quaternion product
 		void operator*=(const otterQuaternion& q);
 		otterQuaternion& operator*(const otterQuaternion& q) const;
