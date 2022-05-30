@@ -61,6 +61,18 @@ namespace otterEngine {
 		return newQuaternion;
 	}
 
+	//scalar division
+	void otterQuaternion::operator/=(const float _s) {
+		s /= _s;
+		v /= _s;
+	}
+	otterQuaternion& otterQuaternion::operator/(const float _s) const {
+		float scalar = s / _s;
+		otterVector vector = v / _s;
+		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
+		return newQuaternion;
+	}
+
 	//quaternion product
 	void otterQuaternion::operator*=(const otterQuaternion& q) {
 		s = s * q.s + v * q.v;
