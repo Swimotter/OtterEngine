@@ -51,13 +51,16 @@ namespace otterEngine {
 		static float normSqr(const otterQuaternion& q);
 
 		//normalize
-		static otterQuaternion& normalize(const otterQuaternion& q);
+		static otterQuaternion& unitNorm(const otterQuaternion& q);
 
 		//conjugate
 		static otterQuaternion& conjugate(const otterQuaternion& q);
 
 		//inverse
 		static otterQuaternion& inverse(const otterQuaternion& q);
+
+		//rotate vector
+		static otterVector& rotateVector(const otterQuaternion& q, float _angle, otterVector& _axis);
 	};
 }
 

@@ -98,7 +98,7 @@ namespace otterEngine {
 	}
 
 	//normalize
-	otterQuaternion& otterQuaternion::normalize(const otterQuaternion& q) {
+	otterQuaternion& otterQuaternion::unitNorm(const otterQuaternion& q) {
 		float quaternionNorm = norm(q);
 		otterQuaternion output = q;
 		if (quaternionNorm == !0) {
@@ -120,5 +120,17 @@ namespace otterEngine {
 		float sqrNorm = normSqr(q);
 		otterQuaternion newQuaternion = otterQuaternion(conj / sqrNorm);
 		return newQuaternion;
+	}
+
+	//rotate vector
+	otterVector& otterQuaternion::rotateVector(const otterQuaternion& q, float _angle, otterVector& _axis)
+	{
+		otterQuaternion imag(0, _axis);
+		_axis = otterVector::normalize(_axis);
+		otterQuaternion real(_angle, _axis);
+		otterQuaternion unit = unitNorm(q);
+		otterQuaternion invert = inverse(q);
+		otterQuaternion rotated = real * imag * invert;
+		return rotated.v;
 	}
 }
