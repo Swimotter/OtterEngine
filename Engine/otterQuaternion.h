@@ -43,6 +43,9 @@ namespace otterEngine {
 		//quaternion product
 		void operator*=(const otterQuaternion& q);
 		otterQuaternion& operator*(const otterQuaternion& q) const;
+
+		//quaternion norm
+		static float norm(const otterQuaternion& q);
 	};
 }
 

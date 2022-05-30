@@ -1,5 +1,6 @@
 #include "otterQuaternion.h"
 #include "otterVector.h"
+#include <iostream>
 
 namespace otterEngine {
 	//constructors
@@ -84,5 +85,10 @@ namespace otterEngine {
 		otterVector vector = q.v * s + v * q.s + otterVector::cross(v, q.v);
 		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
 		return newQuaternion;
+	}
+
+	//quaternion norm
+	float otterQuaternion::norm(const otterQuaternion& q) {
+		return std::sqrt(q.s * q.s + q.v * q.v);
 	}
 }
