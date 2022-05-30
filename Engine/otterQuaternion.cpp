@@ -35,4 +35,17 @@ namespace otterEngine {
 		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
 		return newQuaternion;
 	}
+
+	//quaternion subtraction
+	void otterQuaternion::operator-=(const otterQuaternion& q) {
+		s -= q.s;
+		v -= q.v;
+	}
+	otterQuaternion& otterQuaternion::operator-(const otterQuaternion& q) const
+	{
+		float scalar = s - q.s;
+		otterVector vector = v - q.v;
+		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
+		return newQuaternion;
+	}
 }
