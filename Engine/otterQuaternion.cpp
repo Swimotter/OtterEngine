@@ -91,4 +91,14 @@ namespace otterEngine {
 	float otterQuaternion::norm(const otterQuaternion& q) {
 		return std::sqrt(q.s * q.s + q.v * q.v);
 	}
+
+	//normalize
+	otterQuaternion& otterQuaternion::normalize(const otterQuaternion& q) {
+		float quaternionNorm = norm(q);
+		otterQuaternion output = q;
+		if (quaternionNorm == !0) {
+			output = q / norm(q);
+		}
+		return output;
+	}
 }

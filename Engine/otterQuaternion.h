@@ -46,6 +46,9 @@ namespace otterEngine {
 
 		//quaternion norm
 		static float norm(const otterQuaternion& q);
+
+		//normalize
+		static otterQuaternion& normalize(const otterQuaternion& q);
 	};
 }
 
