@@ -101,4 +101,11 @@ namespace otterEngine {
 		}
 		return output;
 	}
+
+	//conjugate
+	otterQuaternion& otterQuaternion::conjugate(const otterQuaternion& q) {
+		otterVector vector = q.v * -1;
+		otterQuaternion newQuaternion = otterQuaternion(q.s, vector);
+		return newQuaternion;
+	}
 }

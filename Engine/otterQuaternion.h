@@ -49,6 +49,9 @@ namespace otterEngine {
 
 		//normalize
 		static otterQuaternion& normalize(const otterQuaternion& q);
+
+		//conjugate
+		static otterQuaternion& conjugate(const otterQuaternion& q);
 	};
 }
 
