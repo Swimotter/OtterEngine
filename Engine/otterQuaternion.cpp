@@ -92,6 +92,11 @@ namespace otterEngine {
 		return std::sqrt(q.s * q.s + q.v * q.v);
 	}
 
+	//quaternion norm squared
+	float otterQuaternion::normSqr(const otterQuaternion& q) {
+		return q.s * q.s + q.v * q.v;
+	}
+
 	//normalize
 	otterQuaternion& otterQuaternion::normalize(const otterQuaternion& q) {
 		float quaternionNorm = norm(q);
@@ -106,6 +111,14 @@ namespace otterEngine {
 	otterQuaternion& otterQuaternion::conjugate(const otterQuaternion& q) {
 		otterVector vector = q.v * -1;
 		otterQuaternion newQuaternion = otterQuaternion(q.s, vector);
+		return newQuaternion;
+	}
+
+	//inverse
+	otterQuaternion& otterQuaternion::inverse(const otterQuaternion& q) {
+		otterQuaternion conj = conjugate(q);
+		float sqrNorm = normSqr(q);
+		otterQuaternion newQuaternion = otterQuaternion(conj / sqrNorm);
 		return newQuaternion;
 	}
 }

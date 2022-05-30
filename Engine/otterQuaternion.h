@@ -47,11 +47,17 @@ namespace otterEngine {
 		//quaternion norm
 		static float norm(const otterQuaternion& q);
 
+		//quaternion norm squared
+		static float normSqr(const otterQuaternion& q);
+
 		//normalize
 		static otterQuaternion& normalize(const otterQuaternion& q);
 
 		//conjugate
 		static otterQuaternion& conjugate(const otterQuaternion& q);
+
+		//inverse
+		static otterQuaternion& inverse(const otterQuaternion& q);
 	};
 }
 
