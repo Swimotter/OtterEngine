@@ -126,12 +126,7 @@ namespace otterEngine {
 	//rotate vector
 	otterVector otterVector::rotateVector(float _angle, const otterVector& _axis)
 	{
-		otterQuaternion imag(0, _axis);
-		otterVector normalAxis = otterVector::normalize(_axis);
-		otterQuaternion real(_angle, normalAxis);
-		otterQuaternion unit = otterQuaternion::unitNorm(real);
-		otterQuaternion invert = otterQuaternion::inverse(real);
-		otterQuaternion rotated = real * imag * invert;
-		return rotated.v;
+		otterQuaternion real(_angle, normalize(_axis));
+		return (real * otterQuaternion(0, _axis) * otterQuaternion::inverse(otterQuaternion::unitNorm(real))).v;
 	}
 }

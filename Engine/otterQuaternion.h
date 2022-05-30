@@ -60,4 +60,3 @@ namespace otterEngine {
 		static otterQuaternion inverse(const otterQuaternion& q);
 	};
 }
-
