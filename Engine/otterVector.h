@@ -29,12 +29,12 @@ namespace otterEngine {
 		otterVector operator-(const otterVector& v) const;
 
 		//scalar multiplication
-		void operator*=(const float s);
-		otterVector operator*(const float s) const;
+		void operator*=(float s);
+		otterVector operator*(float s) const;
 
 		//scalar division
-		void operator/=(const float s);
-		otterVector operator/(const float s) const;
+		void operator/=(float s);
+		otterVector operator/(float s) const;
 
 		//dot product
 		float operator*(const otterVector& v) const;
@@ -55,12 +55,12 @@ namespace otterEngine {
 
 		//normalize
 		void normalized();
-		static otterVector& normalize(otterVector& v);
+		static otterVector& normalize(const otterVector& v);
 
 		//zero vector
 		static otterVector& zero();
 
 		//rotate vector
-		static otterVector& rotateVector(float _angle, otterVector& _axis);
+		static otterVector& rotateVector(float _angle, const otterVector& _axis);
 	};
 }

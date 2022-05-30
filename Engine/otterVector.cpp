@@ -109,13 +109,13 @@ namespace otterEngine {
 	void otterVector::normalized() {
 		*this = normalize(*this);
 	}
-	otterVector& otterVector::normalize(otterVector& v) {
-		float mag = v.magnitude();
+	otterVector& otterVector::normalize(const otterVector& v) {
+		otterVector output = v;
+		float mag = output.magnitude();
 		if (mag > 0.0f) {
-			v /= mag;
-			return v;
+			output /= mag;
 		}
-		return v;
+		return output;
 	}
 
 	//zero vector
@@ -125,11 +125,11 @@ namespace otterEngine {
 	}
 
 	//rotate vector
-	otterVector& otterVector::rotateVector(float _angle, otterVector& _axis)
+	otterVector& otterVector::rotateVector(float _angle, const otterVector& _axis)
 	{
 		otterQuaternion imag(0, _axis);
-		_axis = otterVector::normalize(_axis);
-		otterQuaternion real(_angle, _axis);
+		otterVector normalAxis = otterVector::normalize(_axis);
+		otterQuaternion real(_angle, normalAxis);
 		otterQuaternion unit = otterQuaternion::unitNorm(real);
 		otterQuaternion invert = otterQuaternion::inverse(real);
 		otterQuaternion rotated = real * imag * invert;

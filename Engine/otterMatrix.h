@@ -28,12 +28,12 @@ namespace otterEngine {
 		otterMatrix& operator-(const otterMatrix& m) const;
 
 		//scalar multiplication
-		void operator*=(const float s);
-		otterMatrix& operator*(const float s) const;
+		void operator*=(float s);
+		otterMatrix& operator*(float s) const;
 
 		//scalar division
-		void operator/=(const float s);
-		otterMatrix& operator/(const float s) const;
+		void operator/=(float s);
+		otterMatrix& operator/(float s) const;
 
 		//matrix product
 		void operator*=(const otterMatrix& m);

@@ -7,7 +7,7 @@ namespace otterEngine {
 	otterQuaternion::otterQuaternion() :
 		s(0.0),
 		v(otterVector()) {};
-	otterQuaternion::otterQuaternion(float _s, otterVector& _v) :
+	otterQuaternion::otterQuaternion(float _s, const otterVector& _v) :
 		s(_s),
 		v(_v) {};
 

@@ -15,7 +15,7 @@ namespace otterEngine {
 
 		//constructors
 		otterQuaternion();
-		otterQuaternion(float _s, otterVector& _v);
+		otterQuaternion(float _s, const otterVector& _v);
 
 		//destructor
 		~otterQuaternion();
@@ -33,12 +33,12 @@ namespace otterEngine {
 		otterQuaternion& operator-(const otterQuaternion& q) const;
 
 		//scalar multiplication
-		void operator*=(const float s);
-		otterQuaternion& operator*(const float s) const;
+		void operator*=(float s);
+		otterQuaternion& operator*(float s) const;
 
 		//scalar division
-		void operator/=(const float s);
-		otterQuaternion& operator/(const float s) const;
+		void operator/=(float s);
+		otterQuaternion& operator/(float s) const;
 
 		//quaternion product
 		void operator*=(const otterQuaternion& q);
