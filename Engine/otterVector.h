@@ -55,12 +55,12 @@ namespace otterEngine {
 
 		//normalize
 		void normalized();
-		static otterVector& normalize(const otterVector& v);
+		static otterVector normalize(const otterVector& v);
 
 		//zero vector
-		static otterVector& zero();
+		static otterVector zero();
 
 		//rotate vector
-		static otterVector& rotateVector(float _angle, const otterVector& _axis);
+		static otterVector rotateVector(float _angle, const otterVector& _axis);
 	};
 }

@@ -26,23 +26,23 @@ namespace otterEngine {
 
 		//quaternion addition
 		void operator+=(const otterQuaternion& q);
-		otterQuaternion& operator+(const otterQuaternion& q) const;
+		otterQuaternion operator+(const otterQuaternion& q) const;
 
 		//quaternion subtraction
 		void operator-=(const otterQuaternion& q);
-		otterQuaternion& operator-(const otterQuaternion& q) const;
+		otterQuaternion operator-(const otterQuaternion& q) const;
 
 		//scalar multiplication
 		void operator*=(float s);
-		otterQuaternion& operator*(float s) const;
+		otterQuaternion operator*(float s) const;
 
 		//scalar division
 		void operator/=(float s);
-		otterQuaternion& operator/(float s) const;
+		otterQuaternion operator/(float s) const;
 
 		//quaternion product
 		void operator*=(const otterQuaternion& q);
-		otterQuaternion& operator*(const otterQuaternion& q) const;
+		otterQuaternion operator*(const otterQuaternion& q) const;
 
 		//quaternion norm
 		static float norm(const otterQuaternion& q);
@@ -51,13 +51,13 @@ namespace otterEngine {
 		static float normSqr(const otterQuaternion& q);
 
 		//normalize
-		static otterQuaternion& unitNorm(const otterQuaternion& q);
+		static otterQuaternion unitNorm(const otterQuaternion& q);
 
 		//conjugate
-		static otterQuaternion& conjugate(const otterQuaternion& q);
+		static otterQuaternion conjugate(const otterQuaternion& q);
 
 		//inverse
-		static otterQuaternion& inverse(const otterQuaternion& q);
+		static otterQuaternion inverse(const otterQuaternion& q);
 	};
 }
 

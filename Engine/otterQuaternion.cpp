@@ -29,12 +29,8 @@ namespace otterEngine {
 		s += q.s;
 		v += q.v;
 	}
-	otterQuaternion& otterQuaternion::operator+(const otterQuaternion& q) const
-	{
-		float scalar = s + q.s;
-		otterVector vector = v + q.v;
-		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
-		return newQuaternion;
+	otterQuaternion otterQuaternion::operator+(const otterQuaternion& q) const {
+		return otterQuaternion(s + q.s, v + q.v);
 	}
 
 	//quaternion subtraction
@@ -42,12 +38,8 @@ namespace otterEngine {
 		s -= q.s;
 		v -= q.v;
 	}
-	otterQuaternion& otterQuaternion::operator-(const otterQuaternion& q) const
-	{
-		float scalar = s - q.s;
-		otterVector vector = v - q.v;
-		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
-		return newQuaternion;
+	otterQuaternion otterQuaternion::operator-(const otterQuaternion& q) const {
+		return otterQuaternion(s - q.s, v - q.v);
 	}
 
 	//scalar multiplication
@@ -55,11 +47,8 @@ namespace otterEngine {
 		s *= _s;
 		v *= _s;
 	}
-	otterQuaternion& otterQuaternion::operator*(const float _s) const {
-		float scalar = s * _s;
-		otterVector vector = v * _s;
-		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
-		return newQuaternion;
+	otterQuaternion otterQuaternion::operator*(float _s) const {
+		return otterQuaternion(s * _s, v * _s);
 	}
 
 	//scalar division
@@ -67,11 +56,8 @@ namespace otterEngine {
 		s /= _s;
 		v /= _s;
 	}
-	otterQuaternion& otterQuaternion::operator/(const float _s) const {
-		float scalar = s / _s;
-		otterVector vector = v / _s;
-		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
-		return newQuaternion;
+	otterQuaternion otterQuaternion::operator/(float _s) const {
+		return otterQuaternion(s / _s, v / _s);
 	}
 
 	//quaternion product
@@ -80,11 +66,8 @@ namespace otterEngine {
 		v = q.v * s + v * q.s + otterVector::cross(v, q.v);
 	}
 
-	otterQuaternion& otterQuaternion::operator*(const otterQuaternion& q) const {
-		float scalar = s * q.s + v * q.v;
-		otterVector vector = q.v * s + v * q.s + otterVector::cross(v, q.v);
-		otterQuaternion newQuaternion = otterQuaternion(scalar, vector);
-		return newQuaternion;
+	otterQuaternion otterQuaternion::operator*(const otterQuaternion& q) const {
+		return otterQuaternion(s * q.s + v * q.v, q.v * s + v * q.s + otterVector::cross(v, q.v));
 	}
 
 	//quaternion norm
@@ -98,27 +81,21 @@ namespace otterEngine {
 	}
 
 	//normalize
-	otterQuaternion& otterQuaternion::unitNorm(const otterQuaternion& q) {
+	otterQuaternion otterQuaternion::unitNorm(const otterQuaternion& q) {
 		float quaternionNorm = norm(q);
-		otterQuaternion output = q;
 		if (quaternionNorm == !0) {
-			output = q / norm(q);
+			return q / quaternionNorm;
 		}
-		return output;
+		return q;
 	}
 
 	//conjugate
-	otterQuaternion& otterQuaternion::conjugate(const otterQuaternion& q) {
-		otterVector vector = q.v * -1;
-		otterQuaternion newQuaternion = otterQuaternion(q.s, vector);
-		return newQuaternion;
+	otterQuaternion otterQuaternion::conjugate(const otterQuaternion& q) {
+		return otterQuaternion(q.s, q.v * -1);
 	}
 
 	//inverse
-	otterQuaternion& otterQuaternion::inverse(const otterQuaternion& q) {
-		otterQuaternion conj = conjugate(q);
-		float sqrNorm = normSqr(q);
-		otterQuaternion newQuaternion = otterQuaternion(conj / sqrNorm);
-		return newQuaternion;
+	otterQuaternion otterQuaternion::inverse(const otterQuaternion& q) {
+		return otterQuaternion(conjugate(q) / normSqr(q));
 	}
 }

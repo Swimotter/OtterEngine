@@ -21,31 +21,31 @@ namespace otterEngine {
 
 		//matrix addition
 		void operator+=(const otterMatrix& m);
-		otterMatrix& operator+(const otterMatrix& m) const;
+		otterMatrix operator+(const otterMatrix& m) const;
 
 		//matrix subtraction
 		void operator-=(const otterMatrix& m);
-		otterMatrix& operator-(const otterMatrix& m) const;
+		otterMatrix operator-(const otterMatrix& m) const;
 
 		//scalar multiplication
 		void operator*=(float s);
-		otterMatrix& operator*(float s) const;
+		otterMatrix operator*(float s) const;
 
 		//scalar division
 		void operator/=(float s);
-		otterMatrix& operator/(float s) const;
+		otterMatrix operator/(float s) const;
 
 		//matrix product
 		void operator*=(const otterMatrix& m);
-		otterMatrix& operator*(const otterMatrix& m) const;
-		static otterMatrix& matrixProduct(const otterMatrix& m1, const otterMatrix& m2);
+		otterMatrix operator*(const otterMatrix& m) const;
+		static otterMatrix matrixProduct(const otterMatrix& m1, const otterMatrix& m2);
 
 		//vector transformation
-		otterVector& operator*(const otterVector& v) const;
-		static otterVector& vectorTransformation(const otterMatrix& m, const otterVector& v);
+		otterVector operator*(const otterVector& v) const;
+		static otterVector vectorTransformation(const otterMatrix& m, const otterVector& v);
 
 		//identity matrix
-		static otterMatrix& identity();
+		static otterMatrix identity();
 
 		//determinant
 		float determinant() const;
@@ -53,14 +53,14 @@ namespace otterEngine {
 
 		//transpose
 		void transpose();
-		static otterMatrix& transpose(const otterMatrix& m);
+		static otterMatrix transpose(const otterMatrix& m);
 
 		//adjugate
 		void adjugate();
-		static otterMatrix& adjugate(const otterMatrix& m);
+		static otterMatrix adjugate(const otterMatrix& m);
 
 		//inverse
 		void invert();
-		static otterMatrix& inverse(const otterMatrix& m);
+		static otterMatrix inverse(const otterMatrix& m);
 	};
 }

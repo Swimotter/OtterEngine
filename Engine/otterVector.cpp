@@ -84,7 +84,8 @@ namespace otterEngine {
 		return cross(*this, v);
 	}
 	otterVector otterVector::cross(const otterVector& v1, const otterVector& v2) {
-		return otterVector(v1.y * v2.z - v1.z * v2.y,
+		return otterVector(
+			v1.y * v2.z - v1.z * v2.y,
 			v1.z * v2.x - v1.x * v2.z,
 			v1.x * v2.y - v1.y * v2.x);
 	}
@@ -109,23 +110,21 @@ namespace otterEngine {
 	void otterVector::normalized() {
 		*this = normalize(*this);
 	}
-	otterVector& otterVector::normalize(const otterVector& v) {
-		otterVector output = v;
-		float mag = output.magnitude();
+	otterVector otterVector::normalize(const otterVector& v) {
+		float mag = magnitude(v);
 		if (mag > 0.0f) {
-			output /= mag;
+			return otterVector(v / mag);
 		}
-		return output;
-	}
-
-	//zero vector
-	otterVector& otterVector::zero() {
-		otterVector v;
 		return v;
 	}
 
+	//zero vector
+	otterVector otterVector::zero() {
+		return otterVector();
+	}
+
 	//rotate vector
-	otterVector& otterVector::rotateVector(float _angle, const otterVector& _axis)
+	otterVector otterVector::rotateVector(float _angle, const otterVector& _axis)
 	{
 		otterQuaternion imag(0, _axis);
 		otterVector normalAxis = otterVector::normalize(_axis);
