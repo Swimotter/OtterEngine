@@ -23,6 +23,10 @@ namespace otterEngine {
 		//copy constructors
 		otterQuaternion(const otterQuaternion& q);
 		otterQuaternion& operator=(const otterQuaternion& q);
+
+		//quaternion addition
+		void operator+=(const otterQuaternion& q);
+		otterQuaternion& operator+(const otterQuaternion& q) const;
 	};
 }
 
