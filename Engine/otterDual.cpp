@@ -39,4 +39,13 @@ namespace otterMath {
 	otterDual otterDual::operator-(const otterDual& d) {
 		return otterDual(real - d.real, dual - d.dual);
 	}
+
+	//scalar multiplication
+	void otterDual::operator*=(float s) {
+		real *= s;
+		dual *= s;
+	}
+	otterDual otterDual::operator*(float s) {
+		return otterDual(real * s, dual * s);
+	}
 }

@@ -29,5 +29,9 @@ namespace otterMath {
 		//dual subtraction
 		void operator-=(const otterDual& d);
 		otterDual operator-(const otterDual& d);
+
+		//scalar multiplication
+		void operator*=(float s);
+		otterDual operator*(float s);
 	};
 }
