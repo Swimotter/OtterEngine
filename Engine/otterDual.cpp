@@ -30,4 +30,13 @@ namespace otterMath {
 	otterDual otterDual::operator+(const otterDual& d) {
 		return otterDual(real + d.real, dual + d.dual);
 	}
+
+	//dual subtraction
+	void otterDual::operator-=(const otterDual& d) {
+		real -= d.real;
+		dual -= d.dual;
+	}
+	otterDual otterDual::operator-(const otterDual& d) {
+		return otterDual(real - d.real, dual - d.dual);
+	}
 }

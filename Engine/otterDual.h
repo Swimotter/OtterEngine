@@ -25,5 +25,9 @@ namespace otterMath {
 		//dual addition
 		void operator+=(const otterDual& d);
 		otterDual operator+(const otterDual& d);
+
+		//dual subtraction
+		void operator-=(const otterDual& d);
+		otterDual operator-(const otterDual& d);
 	};
 }
