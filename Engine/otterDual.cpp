@@ -21,4 +21,13 @@ namespace otterMath {
 		dual = d.dual;
 		return *this;
 	}
+
+	//dual addition
+	void otterDual::operator+=(const otterDual& d) {
+		real += d.real;
+		dual += d.dual;
+	}
+	otterDual otterDual::operator+(const otterDual& d) {
+		return otterDual(real + d.real, dual + d.dual);
+	}
 }

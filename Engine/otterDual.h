@@ -21,5 +21,9 @@ namespace otterMath {
 		//copy constructors
 		otterDual(const otterDual& d);
 		otterDual& operator=(const otterDual& d);
+
+		//dual addition
+		void operator+=(const otterDual& d);
+		otterDual operator+(const otterDual& d);
 	};
 }
