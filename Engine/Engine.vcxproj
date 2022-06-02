@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="otterDual.h" />
     <ClInclude Include="otterMatrix.h" />
     <ClInclude Include="otterVector.h" />
     <ClInclude Include="otterQuaternion.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="otterDual.cpp" />
     <ClCompile Include="otterMatrix.cpp" />
     <ClCompile Include="otterVector.cpp" />
     <ClCompile Include="otterQuaternion.cpp" />

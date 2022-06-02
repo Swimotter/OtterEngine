@@ -14,7 +14,7 @@ namespace otterMath {
 	//destructor
 	otterQuaternion::~otterQuaternion() {};
 
-	//copy constructor
+	//copy constructors
 	otterQuaternion::otterQuaternion(const otterQuaternion& q) :
 		s(q.s),
 		v(q.v) {};
