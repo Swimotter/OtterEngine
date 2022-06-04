@@ -40,4 +40,13 @@ namespace otterMath {
 	otterDualQuaternion otterDualQuaternion::operator-(const otterDualQuaternion& dq) {
 		return otterDualQuaternion(qRot - dq.qRot, qPos - dq.qPos);
 	}
+
+	//scalar multiplication
+	void otterDualQuaternion::operator*=(float s) {
+		qRot *= s;
+		qPos *= s;
+	}
+	otterDualQuaternion otterDualQuaternion::operator*(float s) {
+		return otterDualQuaternion(qRot * s, qPos * s);
+	}
 }
