@@ -58,5 +58,8 @@ namespace otterMath {
 
 		//inverse
 		static otterQuaternion inverse(const otterQuaternion& q);
+
+		//dot product
+		static float dot(const otterQuaternion& q1, const otterQuaternion& q2);
 	};
 }

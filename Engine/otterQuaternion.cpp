@@ -97,4 +97,9 @@ namespace otterMath {
 	otterQuaternion otterQuaternion::inverse(const otterQuaternion& q) {
 		return otterQuaternion(conjugate(q) / normSqr(q));
 	}
+
+	//dot product
+	float otterQuaternion::dot(const otterQuaternion& q1, const otterQuaternion& q2) {
+		return q1.s * q2.s + q1.v * q2.v;
+	}
 }
