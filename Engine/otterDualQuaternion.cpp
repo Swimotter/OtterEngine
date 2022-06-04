@@ -86,7 +86,16 @@ namespace otterMath {
 
 	//norm
 	otterDual otterDualQuaternion::norm(const otterDualQuaternion& dq) {
-		otterDualQuaternion thirdConj = thirdConjugate(dq);
-		return otterDual(otterQuaternion::norm(thirdConj.qRot * dq.qRot), otterQuaternion::norm(thirdConj.qPos * dq.qPos));
+		float mag = otterQuaternion::norm(dq.qRot);
+		if (mag == 0) {
+			return otterDual(0, otterQuaternion::norm(dq.qPos));
+		}
+		return otterDual(otterQuaternion::norm(dq.qRot), (dq.qRot * otterQuaternion::conjugate(dq.qPos) + dq.qPos * otterQuaternion::conjugate(dq.qRot)).s / (2 * mag));
+	}
+
+	//normalize
+	otterDualQuaternion otterDualQuaternion::normalize(const otterDualQuaternion& dq) {
+		float mag = otterQuaternion::norm(dq.qRot);
+		return otterDualQuaternion(dq.qRot / mag, dq.qPos / mag);
 	}
 }

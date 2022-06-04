@@ -56,5 +56,8 @@ namespace otterMath {
 
 		//norm
 		static otterDual norm(const otterDualQuaternion& dq);
+
+		//normalize
+		static otterDualQuaternion normalize(const otterDualQuaternion& dq);
 	};
 }
