@@ -35,5 +35,9 @@ namespace otterMath {
 		//scalar multiplication
 		void operator*=(float s);
 		otterDualQuaternion operator*(float s);
+
+		//scalar division
+		void operator/=(float s);
+		otterDualQuaternion operator/(float s);
 	};
 }
