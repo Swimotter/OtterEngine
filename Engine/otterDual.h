@@ -41,5 +41,9 @@ namespace otterMath {
 		//scalar division
 		void operator/=(float s);
 		otterDual operator/(float s);
+
+		//dual division
+		void operator/=(const otterDual& d);
+		otterDual operator/(const otterDual& d);
 	};
 }

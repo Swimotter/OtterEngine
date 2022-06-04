@@ -66,4 +66,19 @@ namespace otterMath {
 	otterDual otterDual::operator/(float s) {
 		return otterDual(real / s, dual / s);
 	}
+
+	//dual division
+	void otterDual::operator/=(const otterDual& d) {
+		if (d.real == 0) {
+			return;
+		}
+		real /= d.real;
+		dual = (d.real * dual - real * d.dual) / (d.real * d.real);
+	}
+	otterDual otterDual::operator/(const otterDual& d) {
+		if (d.real == 0) {
+			return;
+		}
+		return otterDual(real / d.real, (d.real * dual - real * d.dual) / (d.real * d.real));
+	}
 }
