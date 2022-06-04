@@ -43,5 +43,8 @@ namespace otterMath {
 		//dual quaternion multiplication
 		void operator*=(const otterDualQuaternion& dq);
 		otterDualQuaternion operator*(const otterDualQuaternion& dq);
+
+		//first conjugate
+		static otterDualQuaternion firstConjugate(const otterDualQuaternion& dq);
 	};
 }
