@@ -46,5 +46,8 @@ namespace otterMath {
 
 		//first conjugate
 		static otterDualQuaternion firstConjugate(const otterDualQuaternion& dq);
+
+		//second conjugate
+		static otterDualQuaternion secondConjugate(const otterDualQuaternion& dq);
 	};
 }

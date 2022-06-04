@@ -72,4 +72,9 @@ namespace otterMath {
 	otterDualQuaternion otterDualQuaternion::firstConjugate(const otterDualQuaternion& dq) {
 		return otterDualQuaternion(otterQuaternion::conjugate(dq.qRot), otterQuaternion::conjugate(dq.qPos));
 	}
+
+	//second conjugate
+	otterDualQuaternion otterDualQuaternion::secondConjugate(const otterDualQuaternion& dq) {
+		return otterDualQuaternion(dq.qRot, dq.qPos * -1);
+	}
 }
