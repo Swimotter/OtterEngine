@@ -1,5 +1,6 @@
 #include "otterDualQuaternion.h"
 #include "otterQuaternion.h"
+#include <iostream>
 
 namespace otterMath {
 	//constructors
@@ -81,5 +82,11 @@ namespace otterMath {
 	//third conjugate
 	otterDualQuaternion otterDualQuaternion::thirdConjugate(const otterDualQuaternion& dq) {
 		return otterDualQuaternion(otterQuaternion::conjugate(dq.qRot), otterQuaternion::conjugate(dq.qPos) * -1);
+	}
+
+	//norm
+	otterDual otterDualQuaternion::norm(const otterDualQuaternion& dq) {
+		otterDualQuaternion thirdConj = thirdConjugate(dq);
+		return otterDual(otterQuaternion::norm(thirdConj.qRot * dq.qRot), otterQuaternion::norm(thirdConj.qPos * dq.qPos));
 	}
 }

@@ -65,7 +65,6 @@ namespace otterMath {
 		s = s * q.s + v * q.v;
 		v = q.v * s + v * q.s + otterVector::cross(v, q.v);
 	}
-
 	otterQuaternion otterQuaternion::operator*(const otterQuaternion& q) const {
 		return otterQuaternion(s * q.s + v * q.v, q.v * s + v * q.s + otterVector::cross(v, q.v));
 	}

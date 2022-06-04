@@ -1,5 +1,6 @@
 #pragma once
 #include "otterQuaternion.h"
+#include "otterDual.h"
 
 namespace otterMath {
 	class otterDualQuaternion
@@ -52,5 +53,8 @@ namespace otterMath {
 
 		//third conjugate
 		static otterDualQuaternion thirdConjugate(const otterDualQuaternion& dq);
+
+		//norm
+		static otterDual norm(const otterDualQuaternion& dq);
 	};
 }
