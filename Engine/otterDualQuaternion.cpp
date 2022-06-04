@@ -22,4 +22,13 @@ namespace otterMath {
 		qPos = dq.qPos;
 		return *this;
 	}
+
+	//dual quaternion addition
+	void otterDualQuaternion::operator+=(const otterDualQuaternion& dq) {
+		qRot += dq.qRot;
+		qPos += dq.qPos;
+	}
+	otterDualQuaternion otterDualQuaternion::operator+(const otterDualQuaternion& dq) {
+		return otterDualQuaternion(qRot + dq.qRot, qPos + dq.qPos);
+	}
 }

@@ -23,5 +23,9 @@ namespace otterMath {
 		//copy constructors
 		otterDualQuaternion(const otterDualQuaternion& dq);
 		otterDualQuaternion& operator=(const otterDualQuaternion& dq);
+
+		//dual quaternion addition
+		void operator+=(const otterDualQuaternion& dq);
+		otterDualQuaternion operator+(const otterDualQuaternion& dq);
 	};
 }
