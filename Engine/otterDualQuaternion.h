@@ -27,5 +27,9 @@ namespace otterMath {
 		//dual quaternion addition
 		void operator+=(const otterDualQuaternion& dq);
 		otterDualQuaternion operator+(const otterDualQuaternion& dq);
+
+		//dual quaternion subtraction
+		void operator-=(const otterDualQuaternion& dq);
+		otterDualQuaternion operator-(const otterDualQuaternion& dq);
 	};
 }
