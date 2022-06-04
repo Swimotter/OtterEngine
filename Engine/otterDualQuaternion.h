@@ -39,5 +39,9 @@ namespace otterMath {
 		//scalar division
 		void operator/=(float s);
 		otterDualQuaternion operator/(float s);
+
+		//dual quaternion multiplication
+		void operator*=(const otterDualQuaternion& dq);
+		otterDualQuaternion operator*(const otterDualQuaternion& dq);
 	};
 }
