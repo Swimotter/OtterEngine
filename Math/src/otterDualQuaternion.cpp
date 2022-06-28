@@ -29,7 +29,7 @@ namespace otterMath {
 		qRot += dq.qRot;
 		qPos += dq.qPos;
 	}
-	otterDualQuaternion otterDualQuaternion::operator+(const otterDualQuaternion& dq) {
+	otterDualQuaternion otterDualQuaternion::operator+(const otterDualQuaternion& dq) const {
 		return otterDualQuaternion(qRot + dq.qRot, qPos + dq.qPos);
 	}
 
@@ -38,7 +38,7 @@ namespace otterMath {
 		qRot -= dq.qRot;
 		qPos -= dq.qPos;
 	}
-	otterDualQuaternion otterDualQuaternion::operator-(const otterDualQuaternion& dq) {
+	otterDualQuaternion otterDualQuaternion::operator-(const otterDualQuaternion& dq) const {
 		return otterDualQuaternion(qRot - dq.qRot, qPos - dq.qPos);
 	}
 
@@ -47,7 +47,7 @@ namespace otterMath {
 		qRot *= s;
 		qPos *= s;
 	}
-	otterDualQuaternion otterDualQuaternion::operator*(float s) {
+	otterDualQuaternion otterDualQuaternion::operator*(float s) const {
 		return otterDualQuaternion(qRot * s, qPos * s);
 	}
 
@@ -56,7 +56,7 @@ namespace otterMath {
 		qRot /= s;
 		qPos /= s;
 	}
-	otterDualQuaternion otterDualQuaternion::operator/(float s) {
+	otterDualQuaternion otterDualQuaternion::operator/(float s) const {
 		return otterDualQuaternion(qRot / s, qPos / s);
 	}
 
@@ -65,7 +65,7 @@ namespace otterMath {
 		qRot *= dq.qRot;
 		qPos = qPos * dq.qRot + dq.qPos * qRot;
 	}
-	otterDualQuaternion otterDualQuaternion::operator*(const otterDualQuaternion& dq) {
+	otterDualQuaternion otterDualQuaternion::operator*(const otterDualQuaternion& dq) const {
 		return otterDualQuaternion(qRot * dq.qRot, qPos * dq.qRot + dq.qPos * qRot);
 	}
 
