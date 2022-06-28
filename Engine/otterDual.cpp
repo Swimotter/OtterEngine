@@ -77,7 +77,7 @@ namespace otterMath {
 	}
 	otterDual otterDual::operator/(const otterDual& d) {
 		if (d.real == 0) {
-			return d;
+			return;
 		}
 		return otterDual(real / d.real, (d.real * dual - real * d.dual) / (d.real * d.real));
 	}
