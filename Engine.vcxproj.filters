@@ -15,39 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="otterVector.h">
+    <ClInclude Include="src\otterVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="otterMatrix.h">
+    <ClInclude Include="src\otterQuaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="otterQuaternion.h">
+    <ClInclude Include="src\otterDual.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="otterDual.h">
+    <ClInclude Include="src\otterDualQuaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="otterDualQuaternion.h">
+    <ClInclude Include="src\qualifier.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="otterVector.cpp">
+    <ClCompile Include="src\otterVector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="src\test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="otterMatrix.cpp">
+    <ClCompile Include="src\otterQuaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="otterQuaternion.cpp">
+    <ClCompile Include="src\otterDual.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="otterDual.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="otterDualQuaternion.cpp">
+    <ClCompile Include="src\otterDualQuaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
