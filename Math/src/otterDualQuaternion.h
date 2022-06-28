@@ -27,23 +27,23 @@ namespace otterMath {
 
 		//dual quaternion addition
 		void operator+=(const otterDualQuaternion& dq);
-		otterDualQuaternion operator+(const otterDualQuaternion& dq);
+		otterDualQuaternion operator+(const otterDualQuaternion& dq) const;
 
 		//dual quaternion subtraction
 		void operator-=(const otterDualQuaternion& dq);
-		otterDualQuaternion operator-(const otterDualQuaternion& dq);
+		otterDualQuaternion operator-(const otterDualQuaternion& dq) const;
 
 		//scalar multiplication
 		void operator*=(float s);
-		otterDualQuaternion operator*(float s);
+		otterDualQuaternion operator*(float s) const;
 
 		//scalar division
 		void operator/=(float s);
-		otterDualQuaternion operator/(float s);
+		otterDualQuaternion operator/(float s) const;
 
 		//dual quaternion multiplication
 		void operator*=(const otterDualQuaternion& dq);
-		otterDualQuaternion operator*(const otterDualQuaternion& dq);
+		otterDualQuaternion operator*(const otterDualQuaternion& dq) const;
 
 		//first conjugate
 		static otterDualQuaternion firstConjugate(const otterDualQuaternion& dq);
