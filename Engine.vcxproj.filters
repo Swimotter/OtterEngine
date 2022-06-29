@@ -33,7 +33,7 @@
     <ClInclude Include="src\Otter\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Application.h">
+    <ClInclude Include="src\Otter\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,7 +53,7 @@
     <ClCompile Include="src\otterDualQuaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
+    <ClCompile Include="src\Otter\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
