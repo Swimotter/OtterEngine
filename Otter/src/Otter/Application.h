@@ -12,4 +12,7 @@ namespace Otter {
 
 		void Run();
 	};
+
+	//Defined by client
+	Application* CreateApplication();
 }
