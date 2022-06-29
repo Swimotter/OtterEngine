@@ -1,8 +1,10 @@
 #pragma once
 
+#include "Core.h"
+
 namespace Otter {
 
-	class __declspec(dllexport) Application
+	class OTTER_API Application
 	{
 	public:
 		Application();

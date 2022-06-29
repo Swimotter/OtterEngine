@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Otter.h" />
     <ClInclude Include="src\Otter\Application.h" />
     <ClInclude Include="src\Otter\Core.h" />
     <ClInclude Include="src\qualifier.h" />
