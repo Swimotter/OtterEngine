@@ -4,8 +4,7 @@
 
 namespace Otter {
 
-	class OTTER_API Application
-	{
+	class OTTER_API Application {
 	public:
 		Application();
 		virtual ~Application();

@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Otter\Log.h" />
     <ClInclude Include="src\Otter.h" />
     <ClInclude Include="src\Otter\Application.h" />
     <ClInclude Include="src\Otter\Core.h" />
     <ClInclude Include="src\Otter\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Otter\Log.cpp" />
     <ClCompile Include="src\Otter\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

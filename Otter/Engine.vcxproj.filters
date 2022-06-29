@@ -27,9 +27,15 @@
     <ClInclude Include="src\Otter\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Otter\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Otter\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
