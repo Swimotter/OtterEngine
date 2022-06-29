@@ -1,0 +1,3 @@
+[submodule "Otter/vendor/spdlog"]
+	path = Otter/vendor/spdlog
+	url = https://github.com/gabime/spdlog
