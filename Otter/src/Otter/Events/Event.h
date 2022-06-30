@@ -42,4 +42,26 @@ virtual const char* GetName() const override { return #type; }
 	protected:
 		bool _Handled = false;
 	};
+
+	class EventDispatcher {
+		template<typename T>
+		using EventFn = std::function<bool(T&)>;
+	public:
+		EventDispatcher(Event& event) : _Event(event) {}
+
+		template<typename T>
+		bool Dispatch(EventFn<T> func) {
+			if (_Event.GetEventType() == T::GetStaticType()) {
+				_Event._Handled = func(*(T*)&m_Event);
+				return true;
+			}
+			return false;
+		}
+	private:
+		Event& _Event;
+	};
+
+	inline std::ostream& operator<<(std::ostream& os, const Event& e) {
+		return os << e.ToString();
+	}
 }
