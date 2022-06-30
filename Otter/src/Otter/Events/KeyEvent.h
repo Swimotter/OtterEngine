@@ -23,10 +23,24 @@ namespace Otter {
 		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "KeyPressedEvent: " << _KeyCode << " (" << _repeatCount << " repeats)";
+			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(KeyPressed)
 	private:
 		int _repeatCount;
+	};
+
+	class OTTER_API KeyReleasedEvent : public KeyEvent {
+	public:
+		KeyReleasedEvent(int keycode) : KeyEvent(keycode) {}
+
+		std::string ToString() const override {
+			std::stringstream ss;
+			ss << "KeyReleasedEvent: " << _KeyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyReleased)
 	};
 }
