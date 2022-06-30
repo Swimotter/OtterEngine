@@ -23,6 +23,7 @@
       <Filter>Otter</Filter>
     </ClInclude>
     <ClInclude Include="src\Otter\Events\Event.h" />
+    <ClInclude Include="src\Otter\Events\KeyEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp">
