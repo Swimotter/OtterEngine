@@ -143,12 +143,6 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Math\otterDual.h" />
-    <ClInclude Include="src\Math\otterDualQuaternion.h" />
-    <ClInclude Include="src\Math\otterMatrix.h" />
-    <ClInclude Include="src\Math\otterQuaternion.h" />
-    <ClInclude Include="src\Math\otterVector.h" />
-    <ClInclude Include="src\Math\qualifier.h" />
     <ClInclude Include="src\Otter.h" />
     <ClInclude Include="src\Otter\Application.h" />
     <ClInclude Include="src\Otter\Core.h" />
@@ -160,12 +154,6 @@
     <ClInclude Include="src\Otter\Log.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Math\otterDual.cpp" />
-    <ClCompile Include="src\Math\otterDualQuaternion.cpp" />
-    <ClCompile Include="src\Math\otterMatrix.cpp" />
-    <ClCompile Include="src\Math\otterQuaternion.cpp" />
-    <ClCompile Include="src\Math\otterVector.cpp" />
-    <ClCompile Include="src\Math\test.cpp" />
     <ClCompile Include="src\Otter\Application.cpp" />
     <ClCompile Include="src\Otter\Log.cpp" />
   </ItemGroup>

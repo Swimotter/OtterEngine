@@ -4,7 +4,8 @@
 #include <sstream>
 
 namespace Otter {
-	class OTTER_APi WindowResizeEvent : public Event {
+
+	class OTTER_API WindowResizeEvent : public Event {
 	public:
 		WindowResizeEvent(unsigned int width, unsigned int height) : _Width(width), _Height(height) {}
 
@@ -18,7 +19,7 @@ namespace Otter {
 		}
 
 		EVENT_CLASS_TYPE(WindowResize)
-			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	private:
 		unsigned int _Width, _Height;
 	};
