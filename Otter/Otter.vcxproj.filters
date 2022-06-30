@@ -7,8 +7,29 @@
     <Filter Include="Otter">
       <UniqueIdentifier>{D326D60D-3F3B-FEBE-08BD-A11E7490FAEF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Otter\Events">
+      <UniqueIdentifier>{578767AC-43EA-F650-EC6F-2F07D8B1C2D3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Math\otterDual.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Math\otterDualQuaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Math\otterMatrix.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Math\otterQuaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Math\otterVector.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Math\qualifier.h">
+      <Filter>Math</Filter>
+    </ClInclude>
     <ClInclude Include="src\Otter.h" />
     <ClInclude Include="src\Otter\Application.h">
       <Filter>Otter</Filter>
@@ -19,15 +40,41 @@
     <ClInclude Include="src\Otter\EntryPoint.h">
       <Filter>Otter</Filter>
     </ClInclude>
+    <ClInclude Include="src\Otter\Events\ApplicationEvent.h">
+      <Filter>Otter\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Otter\Events\Event.h">
+      <Filter>Otter\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Otter\Events\KeyEvent.h">
+      <Filter>Otter\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Otter\Events\MouseEvent.h">
+      <Filter>Otter\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Otter\Log.h">
       <Filter>Otter</Filter>
     </ClInclude>
-    <ClInclude Include="src\Otter\Events\Event.h" />
-    <ClInclude Include="src\Otter\Events\KeyEvent.h" />
-    <ClInclude Include="src\Otter\Events\MouseEvent.h" />
-    <ClInclude Include="src\Otter\Events\ApplicationEvent.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Math\otterDual.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\otterDualQuaternion.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\otterMatrix.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\otterQuaternion.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\otterVector.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\test.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
     <ClCompile Include="src\Otter\Application.cpp">
       <Filter>Otter</Filter>
     </ClCompile>

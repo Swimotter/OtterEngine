@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>OTTER_PLATFORM_WINDOWS;OTTER_BUILD_DLL;OTTER_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -99,7 +99,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>OTTER_PLATFORM_WINDOWS;OTTER_BUILD_DLL;OTTER_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -123,7 +123,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>OTTER_PLATFORM_WINDOWS;OTTER_BUILD_DLL;OTTER_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -143,6 +143,12 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Math\otterDual.h" />
+    <ClInclude Include="src\Math\otterDualQuaternion.h" />
+    <ClInclude Include="src\Math\otterMatrix.h" />
+    <ClInclude Include="src\Math\otterQuaternion.h" />
+    <ClInclude Include="src\Math\otterVector.h" />
+    <ClInclude Include="src\Math\qualifier.h" />
     <ClInclude Include="src\Otter.h" />
     <ClInclude Include="src\Otter\Application.h" />
     <ClInclude Include="src\Otter\Core.h" />
@@ -154,6 +160,12 @@
     <ClInclude Include="src\Otter\Log.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Math\otterDual.cpp" />
+    <ClCompile Include="src\Math\otterDualQuaternion.cpp" />
+    <ClCompile Include="src\Math\otterMatrix.cpp" />
+    <ClCompile Include="src\Math\otterQuaternion.cpp" />
+    <ClCompile Include="src\Math\otterVector.cpp" />
+    <ClCompile Include="src\Math\test.cpp" />
     <ClCompile Include="src\Otter\Application.cpp" />
     <ClCompile Include="src\Otter\Log.cpp" />
   </ItemGroup>
