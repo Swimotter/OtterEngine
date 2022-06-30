@@ -15,11 +15,31 @@ namespace Otter {
 		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "MouseMovedEvent: " << _MouseX << ", " << _MouseY;
+			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	private:
 		float _MouseX, _MouseY;
+	};
+
+	class OTTER_APi MouseScrolledEvent : public Event {
+	public:
+		MouseScrolledEvent(float OffsetX, float OffsetY) : _OffsetX(OffsetX), _OffsetY(OffsetY) {}
+		
+		inline float GetOffsetX() const { return _OffsetX; }
+		inline float GetOffsetY() const { return _OffsetY; }
+
+		std::string ToString() const override {
+			std::stringstream ss;
+			ss << "MouseScrolledEvent: " << _OffsetX << ", " << _OffsetY;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(MouseScrolled)
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+	private:
+		float _OffsetX, _OffsetY;
 	};
 }
