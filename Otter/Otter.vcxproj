@@ -147,6 +147,7 @@
     <ClInclude Include="src\Otter\Application.h" />
     <ClInclude Include="src\Otter\Core.h" />
     <ClInclude Include="src\Otter\EntryPoint.h" />
+    <ClInclude Include="src\Otter\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Otter\Events\Event.h" />
     <ClInclude Include="src\Otter\Events\KeyEvent.h" />
     <ClInclude Include="src\Otter\Events\MouseEvent.h" />
