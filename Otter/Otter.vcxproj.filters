@@ -22,6 +22,7 @@
     <ClInclude Include="src\Otter\Log.h">
       <Filter>Otter</Filter>
     </ClInclude>
+    <ClInclude Include="src\Otter\Events\Event.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp">
