@@ -65,4 +65,17 @@ namespace Otter {
 
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
+
+	class OTTER_API MouseButtonReleasedEvent : public MouseButtonEvent {
+	public:
+		MouseButtonReleasedEvent(int button) : MouseButtonEvent(button) {}
+
+		std::string ToString() const override {
+			std::stringstream ss;
+			ss << "MouseButtonReleasedEvent: " << _Button;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(MouseButtonReleased)
+	};
 }
