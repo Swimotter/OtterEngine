@@ -22,6 +22,12 @@ namespace Otter {
 	private:
 		unsigned int _Width, _Height;
 	};
-}
 
-WindowClose, WindowResize
+	class OTTER_API WindowCloseEvent : public Event {
+	public:
+		WindowCloseEvent() {}
+
+		EVENT_CLASS_TYPE(WindowClose)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	};
+}
