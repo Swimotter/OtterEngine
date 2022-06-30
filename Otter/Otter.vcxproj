@@ -149,6 +149,7 @@
     <ClInclude Include="src\Otter\EntryPoint.h" />
     <ClInclude Include="src\Otter\Events\Event.h" />
     <ClInclude Include="src\Otter\Events\KeyEvent.h" />
+    <ClInclude Include="src\Otter\Events\MouseEvent.h" />
     <ClInclude Include="src\Otter\Log.h" />
   </ItemGroup>
   <ItemGroup>

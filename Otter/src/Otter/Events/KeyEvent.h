@@ -4,6 +4,7 @@
 #include <sstream>
 
 namespace Otter {
+
 	class OTTER_API KeyEvent : public Event {
 	public:
 		inline int GetKeyCode() const { return _KeyCode; }
