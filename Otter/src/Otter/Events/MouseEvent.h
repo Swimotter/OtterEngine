@@ -42,4 +42,14 @@ namespace Otter {
 	private:
 		float _OffsetX, _OffsetY;
 	};
+
+	class OTTER_API MouseButtonEvent : public Event {
+	public:
+		inline int GetMouseButton() const { return _Button; }
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+	protected:
+		MouseButtonEvent(int button) : _Button(button) {}
+
+		int _Button;
+	};
 }
