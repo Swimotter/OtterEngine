@@ -1,14 +1,18 @@
 workspace "Otter"
 	architecture "x64"
 
-	configurations
-	{
+	configurations {
 		"Debug",
 		"Release",
 		"Dist"
 	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+includeDir = {}
+includeDir["GLFW"] = "Otter/vendor/GLFW/include"
+
+include "Otter/vendor/GLFW"
 
 project "Otter"
 	location "Otter"
@@ -21,16 +25,20 @@ project "Otter"
 	pchheader "OtterPCH.h"
 	pchsource "Otter/src/OtterPCH.cpp"
 
-	files
-	{
+	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
-	includedirs
-	{
+	includedirs {
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{includeDir.GLFW}"
+	}
+
+	links {
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -38,14 +46,12 @@ project "Otter"
 		staticruntime "On"
 		systemversion "latest"
 
-		defines
-		{
+		defines {
 			"OTTER_PLATFORM_WINDOWS",
 			"OTTER_BUILD_DLL"
 		}
 
-		postbuildcommands
-		{
+		postbuildcommands {
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 
@@ -69,20 +75,17 @@ project "Sandbox"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files
-	{
+	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
-	includedirs
-	{
+	includedirs {
 		"Otter/vendor/spdlog/include",
 		"Otter/src"
 	}
 
-	links
-	{
+	links {
 		"Otter"
 	}
 
@@ -91,8 +94,7 @@ project "Sandbox"
 		staticruntime "On"
 		systemversion "latest"
 
-		defines
-		{
+		defines {
 			"OTTER_PLATFORM_WINDOWS"
 		}
 

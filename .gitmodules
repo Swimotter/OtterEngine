@@ -1,3 +1,6 @@
 [submodule "Otter/vendor/spdlog"]
 	path = Otter/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Otter/vendor/GLFW"]
+	path = Otter/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW
