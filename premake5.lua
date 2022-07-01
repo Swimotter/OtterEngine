@@ -30,6 +30,10 @@ project "Otter"
 		"%{prj.name}/src/**.cpp"
 	}
 
+	removefiles {
+		"%{prj.name}/src/Math/**"
+	}
+
 	includedirs {
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
