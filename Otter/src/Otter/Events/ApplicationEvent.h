@@ -7,21 +7,21 @@ namespace Otter {
 
 	class OTTER_API WindowResizeEvent : public Event {
 	public:
-		WindowResizeEvent(unsigned int width, unsigned int height) : _Width(width), _Height(height) {}
+		WindowResizeEvent(unsigned int width, unsigned int height) : _width(width), _height(height) {}
 
-		inline unsigned int GetWidth() const { return _Width; }
-		inline unsigned int GetHeight() const { return _Height; }
+		inline unsigned int GetWidth() const { return _width; }
+		inline unsigned int GetHeight() const { return _height; }
 
 		std::string ToString() const override {
 			std::stringstream ss;
-			ss << "WindowResizeEvent: " << _Width << ", " << _Height;
+			ss << "WindowResizeEvent: " << _width << ", " << _height;
 			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(WindowResize)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	private:
-		unsigned int _Width, _Height;
+		unsigned int _width, _height;
 	};
 
 	class OTTER_API WindowCloseEvent : public Event {

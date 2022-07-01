@@ -40,7 +40,7 @@ virtual const char* GetName() const override { return #type; }
 			return GetCategoryFlags() & category;
 		}
 	protected:
-		bool _Handled = false;
+		bool _handled = false;
 	};
 
 	class EventDispatcher {

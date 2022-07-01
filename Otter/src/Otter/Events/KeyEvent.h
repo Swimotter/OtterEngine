@@ -7,12 +7,12 @@ namespace Otter {
 
 	class OTTER_API KeyEvent : public Event {
 	public:
-		inline int GetKeyCode() const { return _KeyCode; }
+		inline int GetKeyCode() const { return _keyCode; }
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 	protected:
-		KeyEvent(int keycode) : _KeyCode(keycode) {}
+		KeyEvent(int keycode) : _keyCode(keycode) {}
 
-		int _KeyCode;
+		int _keyCode;
 	};
 
 	class OTTER_API KeyPressedEvent : public KeyEvent {
@@ -23,7 +23,7 @@ namespace Otter {
 
 		std::string ToString() const override {
 			std::stringstream ss;
-			ss << "KeyPressedEvent: " << _KeyCode << " (" << _repeatCount << " repeats)";
+			ss << "KeyPressedEvent: " << _keyCode << " (" << _repeatCount << " repeats)";
 			return ss.str();
 		}
 
@@ -38,7 +38,7 @@ namespace Otter {
 
 		std::string ToString() const override {
 			std::stringstream ss;
-			ss << "KeyReleasedEvent: " << _KeyCode;
+			ss << "KeyReleasedEvent: " << _keyCode;
 			return ss.str();
 		}
 

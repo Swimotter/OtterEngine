@@ -7,50 +7,50 @@ namespace Otter {
 
 	class OTTER_API MouseMovedEvent : public Event {
 	public:
-		MouseMovedEvent(float x, float y) : _MouseX(x), _MouseY(y) {}
+		MouseMovedEvent(float x, float y) : _mouseX(x), _mouseY(y) {}
 
-		inline float GetX() const { return _MouseX; }
-		inline float GetY() const { return _MouseY; }
+		inline float GetX() const { return _mouseX; }
+		inline float GetY() const { return _mouseY; }
 
 		std::string ToString() const override {
 			std::stringstream ss;
-			ss << "MouseMovedEvent: " << _MouseX << ", " << _MouseY;
+			ss << "MouseMovedEvent: " << _mouseX << ", " << _mouseY;
 			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	private:
-		float _MouseX, _MouseY;
+		float _mouseX, _mouseY;
 	};
 
 	class OTTER_APi MouseScrolledEvent : public Event {
 	public:
-		MouseScrolledEvent(float OffsetX, float OffsetY) : _OffsetX(OffsetX), _OffsetY(OffsetY) {}
+		MouseScrolledEvent(float offsetX, float offsetY) : _offsetX(offsetX), _offsetY(offsetY) {}
 		
-		inline float GetOffsetX() const { return _OffsetX; }
-		inline float GetOffsetY() const { return _OffsetY; }
+		inline float GetoffsetX() const { return _offsetX; }
+		inline float GetoffsetY() const { return _offsetY; }
 
 		std::string ToString() const override {
 			std::stringstream ss;
-			ss << "MouseScrolledEvent: " << _OffsetX << ", " << _OffsetY;
+			ss << "MouseScrolledEvent: " << _offsetX << ", " << _offsetY;
 			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseScrolled)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	private:
-		float _OffsetX, _OffsetY;
+		float _offsetX, _offsetY;
 	};
 
 	class OTTER_API MouseButtonEvent : public Event {
 	public:
-		inline int GetMouseButton() const { return _Button; }
+		inline int GetMouseButton() const { return _button; }
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	protected:
-		MouseButtonEvent(int button) : _Button(button) {}
+		MouseButtonEvent(int button) : _button(button) {}
 
-		int _Button;
+		int _button;
 	};
 
 	class OTTER_API MouseButtonPressedEvent : public MouseButtonEvent {
@@ -59,7 +59,7 @@ namespace Otter {
 
 		std::string ToString() const override {
 			std::stringstream ss;
-			ss << "MouseButtonPressedEvent: " << _Button;
+			ss << "MouseButtonPressedEvent: " << _button;
 			return ss.str();
 		}
 
@@ -72,7 +72,7 @@ namespace Otter {
 
 		std::string ToString() const override {
 			std::stringstream ss;
-			ss << "MouseButtonReleasedEvent: " << _Button;
+			ss << "MouseButtonReleasedEvent: " << _button;
 			return ss.str();
 		}
 
