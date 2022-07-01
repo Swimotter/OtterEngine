@@ -12,24 +12,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Math\otterDual.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Math\otterDualQuaternion.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Math\otterMatrix.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Math\otterQuaternion.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Math\otterVector.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Math\qualifier.h">
-      <Filter>Math</Filter>
-    </ClInclude>
     <ClInclude Include="src\Otter.h" />
     <ClInclude Include="src\Otter\Application.h">
       <Filter>Otter</Filter>
@@ -56,26 +38,9 @@
       <Filter>Otter</Filter>
     </ClInclude>
     <ClInclude Include="src\OtterPCH.h" />
+    <ClInclude Include="src\Otter\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Math\otterDual.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Math\otterDualQuaternion.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Math\otterMatrix.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Math\otterQuaternion.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Math\otterVector.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Math\test.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
     <ClCompile Include="src\Otter\Application.cpp">
       <Filter>Otter</Filter>
     </ClCompile>
