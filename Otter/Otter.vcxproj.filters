@@ -37,6 +37,7 @@
     <ClInclude Include="src\Otter\Log.h">
       <Filter>Otter</Filter>
     </ClInclude>
+    <ClInclude Include="src\OtterPCH.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp">
@@ -45,5 +46,6 @@
     <ClCompile Include="src\Otter\Log.cpp">
       <Filter>Otter</Filter>
     </ClCompile>
+    <ClCompile Include="src\OtterPCH.cpp" />
   </ItemGroup>
 </Project>

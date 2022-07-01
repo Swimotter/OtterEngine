@@ -1,3 +1,4 @@
+#include "OtterPCH.h"
 #include "Application.h"
 #include "Otter/Events/ApplicationEvent.h"
 #include "Otter/Log.h"

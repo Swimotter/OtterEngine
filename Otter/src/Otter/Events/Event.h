@@ -1,8 +1,7 @@
 #pragma once
 
+#include "OtterPCH.h"
 #include "Otter/Core.h"
-#include <string>
-#include <functional>
 
 namespace Otter {
 
@@ -52,7 +51,7 @@ virtual const char* GetName() const override { return #type; }
 		template<typename T>
 		bool Dispatch(EventFn<T> func) {
 			if (_Event.GetEventType() == T::GetStaticType()) {
-				_Event._Handled = func(*(T*)&_Event);
+				_Event._handled = func(*(T*)&_Event);
 				return true;
 			}
 			return false;

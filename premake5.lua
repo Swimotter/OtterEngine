@@ -18,6 +18,9 @@ project "Otter"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "OtterPCH.h"
+	pchsource "Otter/src/OtterPCH.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
