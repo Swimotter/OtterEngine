@@ -54,6 +54,35 @@ namespace Otter {
 			WindowCloseEvent event;
 			data.eventCallback(event);
 		});
+
+		glfwSetCursorPosCallback(_window, [](GLFWwindow* window, double xPos, double yPos) {
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			MouseMovedEvent event((float)xPos, (float)yPos);
+			data.eventCallback(event);
+		});
+
+		glfwSetScrollCallback(_window, [](GLFWwindow* window, double xOffset, double yOffset) {
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			MouseMovedEvent event((float)xOffset, (float)yOffset);
+			data.eventCallback(event);
+		});
+
+		glfwSetMouseButtonCallback(_window, [](GLFWwindow* window, int button, int action, int mods) {
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+			switch (action) {
+			case GLFW_PRESS: {
+				MouseButtonPressedEvent event(button);
+				data.eventCallback(event);
+				break;
+			}
+			case GLFW_RELEASE: {
+				MouseButtonReleasedEvent event(button);
+				data.eventCallback(event);
+				break;
+			}
+			}
+		});
 	}
 
 	void WindowsWindow::Shutdown() {
