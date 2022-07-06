@@ -23,7 +23,7 @@ namespace Otter {
 		float _mouseX, _mouseY;
 	};
 
-	class OTTER_APi MouseScrolledEvent : public Event {
+	class OTTER_API MouseScrolledEvent : public Event {
 	public:
 		MouseScrolledEvent(float offsetX, float offsetY) : _offsetX(offsetX), _offsetY(offsetY) {}
 		
