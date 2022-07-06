@@ -20,7 +20,7 @@ namespace Otter {
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNCTION(OnWindowClose));
 
-		OTTER_CORE_INFO("{0}", e);
+		OTTER_CORE_TRACE("{0}", e);
 	}
 
 	void Application::Run() {
