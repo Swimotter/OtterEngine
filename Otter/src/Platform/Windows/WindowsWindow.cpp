@@ -1,5 +1,8 @@
 #include "OtterPCH.h"
 #include "WindowsWindow.h"
+#include "Otter/Events/ApplicationEvent.h"
+#include "Otter/Events/MouseEvent.h"
+#include "Otter/Events/KeyEvent.h"
 
 namespace Otter {
 
@@ -36,6 +39,15 @@ namespace Otter {
 		glfwMakeContextCurrent(_window);
 		glfwSetWindowUserPointer(_window, &_data);
 		SetVSync(true);
+
+		glfwSetWindowSizeCallback(_window, [](GLFWwindow* window, int width, int height) {
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			data.width = width;
+			data.height = height;
+
+			WindowResizeEvent event(width, height);
+			data.eventCallback(event);
+		});
 	}
 
 	void WindowsWindow::Shutdown() {
