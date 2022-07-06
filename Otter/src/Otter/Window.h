@@ -7,14 +7,11 @@
 namespace Otter {
 
 	struct WindowProps {
-		std::string _title;
-		unsigned int _width;
-		unsigned int _height;
+		std::string title;
+		unsigned int width;
+		unsigned int height;
 
-		WindowProps(const std::string& title = "Otter Engine",
-			unsigned int width = 1280,
-			unsigned int height = 720)
-			: _title(title), _width(width), _height(height) {}
+		WindowProps(const std::string& title = "Otter Engine", unsigned int width = 1280, unsigned int height = 720) : title(title), width(width), height(height) {}
 	};
 
 	//Interface implemented per system
@@ -31,7 +28,7 @@ namespace Otter {
 
 		virtual void SetEventCallback(const EventCallbackFunction& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
-		virtual void IsVsync() const = 0;
+		virtual bool IsVSync() const = 0;
 
 		static Window* Create(const WindowProps& props = WindowProps());
 	};

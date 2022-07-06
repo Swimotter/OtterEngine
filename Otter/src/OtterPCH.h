@@ -11,6 +11,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Otter/Log.h"
 
 //platform specific includes
 #ifdef OTTER_PLATFORM_WINDOWS
