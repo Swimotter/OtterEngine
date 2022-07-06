@@ -3,15 +3,21 @@
 #include "Otter/Events/ApplicationEvent.h"
 #include "Otter/Log.h"
 
+#include <GLFW/glfw3.h>
+
 namespace Otter {
 
-	Application::Application() {}
+	Application::Application() {
+		_window = std::unique_ptr<Window>(Window::Create());
+	}
 
 	Application::~Application() {}
 
 	void Application::Run() {
-		WindowResizeEvent e(1200, 720);
-		OTTER_TRACE(e);
-		while (true);
+		while (_running) {
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			_window->OnUpdate();
+		}
 	}
 }
