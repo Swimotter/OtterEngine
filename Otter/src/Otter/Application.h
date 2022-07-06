@@ -3,6 +3,7 @@
 #include "Core.h"
 #include "Events/Event.h"
 #include "Window.h"
+#include "Events/ApplicationEvent.h"
 
 namespace Otter {
 
@@ -15,6 +16,8 @@ namespace Otter {
 
 		void OnEvent(Event& e);
 	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
 		std::unique_ptr<Window> _window;
 		bool _running = true;
 	};

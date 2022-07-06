@@ -48,6 +48,12 @@ namespace Otter {
 			WindowResizeEvent event(width, height);
 			data.eventCallback(event);
 		});
+
+		glfwSetWindowCloseCallback(_window, [](GLFWwindow* window) {
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			WindowCloseEvent event;
+			data.eventCallback(event);
+		});
 	}
 
 	void WindowsWindow::Shutdown() {

@@ -17,6 +17,9 @@ namespace Otter {
 	Application::~Application() {}
 
 	void Application::OnEvent(Event& e) {
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNCTION(OnWindowClose));
+
 		OTTER_CORE_INFO("{0}", e);
 	}
 
@@ -26,5 +29,10 @@ namespace Otter {
 			glClear(GL_COLOR_BUFFER_BIT);
 			_window->OnUpdate();
 		}
+	}
+
+	bool Application::OnWindowClose(WindowCloseEvent& e) {
+		_running = false;
+		return true;
 	}
 }
