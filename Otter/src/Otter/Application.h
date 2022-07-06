@@ -12,6 +12,8 @@ namespace Otter {
 		virtual ~Application();
 
 		void Run();
+
+		void OnEvent(Event& e);
 	private:
 		std::unique_ptr<Window> _window;
 		bool _running = true;
