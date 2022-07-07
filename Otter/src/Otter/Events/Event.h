@@ -49,8 +49,8 @@ virtual const char* GetName() const override { return #type; }
 
 		template<typename T>
 		bool Dispatch(EventFn<T> func) {
-			if (_Event.GetEventType() == T::GetStaticType()) {
-				_event.handled = func(*(T*)&_Event);
+			if (_event.GetEventType() == T::GetStaticType()) {
+				_event.handled = func(*(T*)&_event);
 				return true;
 			}
 			return false;
