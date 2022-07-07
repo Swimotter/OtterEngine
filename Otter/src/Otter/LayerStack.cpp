@@ -16,4 +16,8 @@ namespace Otter {
 	void LayerStack::PushLayer(Layer* layer) {
 		_layerInsert = _layers.emplace(_layerInsert, layer);
 	}
+
+	void LayerStack::PushOverlay(Layer* overlay) {
+		_layers.emplace_back(overlay);
+	}
 }
