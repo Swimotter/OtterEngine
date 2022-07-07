@@ -28,4 +28,11 @@ namespace Otter {
 			_layerInsert--;
 		}
 	}
+
+	void LayerStack::PopOverlay(Layer* overlay) {
+		auto item = std::find(_layers.begin(), _layers.end(), overlay);
+		if (item != _layers.end()) {
+			_layers.erase(item);
+		}
+	}
 }
