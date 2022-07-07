@@ -20,4 +20,12 @@ namespace Otter {
 	void LayerStack::PushOverlay(Layer* overlay) {
 		_layers.emplace_back(overlay);
 	}
+
+	void LayerStack::PopLayer(Layer* layer) {
+		auto item = std::find(_layers.begin(), _layers.end(), layer);
+		if (item != _layers.end()) {
+			_layers.erase(item);
+			_layerInsert--;
+		}
+	}
 }
