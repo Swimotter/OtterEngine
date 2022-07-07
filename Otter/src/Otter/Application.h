@@ -1,9 +1,10 @@
 #pragma once
 
 #include "Core.h"
-#include "Events/Event.h"
 #include "Window.h"
-#include "Events/ApplicationEvent.h"
+#include "Otter/LayerStack.h"
+#include "Otter/Events/Event.h"
+#include "Otter/Events/ApplicationEvent.h"
 
 namespace Otter {
 
@@ -15,11 +16,15 @@ namespace Otter {
 		void Run();
 
 		void OnEvent(Event& e);
+
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* overlay);
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> _window;
 		bool _running = true;
+		LayerStack _layerStack;
 	};
 
 	//Defined by client
