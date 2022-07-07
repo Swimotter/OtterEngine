@@ -2,8 +2,7 @@
 #include "Application.h"
 #include "Otter/Events/ApplicationEvent.h"
 #include "Otter/Log.h"
-
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace Otter {
 

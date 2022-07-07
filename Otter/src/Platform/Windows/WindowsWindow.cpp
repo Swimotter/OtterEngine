@@ -3,6 +3,7 @@
 #include "Otter/Events/ApplicationEvent.h"
 #include "Otter/Events/MouseEvent.h"
 #include "Otter/Events/KeyEvent.h"
+#include <glad/glad.h>
 
 namespace Otter {
 
@@ -41,6 +42,8 @@ namespace Otter {
 
 		_window = glfwCreateWindow((int)props.width, (int)props.height, _data.title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(_window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		OTTER_CORE_ASSERT(status, "Failed to initialize Glad!")
 		glfwSetWindowUserPointer(_window, &_data);
 		SetVSync(true);
 

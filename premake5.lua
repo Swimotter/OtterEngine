@@ -11,8 +11,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 includeDir = {}
 includeDir["GLFW"] = "Otter/vendor/GLFW/include"
+includeDir["Glad"] = "Otter/vendor/Glad/include"
 
 include "Otter/vendor/GLFW"
+include "Otter/vendor/Glad"
 
 project "Otter"
 	location "Otter"
@@ -37,11 +39,13 @@ project "Otter"
 	includedirs {
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{includeDir.GLFW}"
+		"%{includeDir.GLFW}",
+		"%{includeDir.Glad}"
 	}
 
 	links {
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -52,7 +56,8 @@ project "Otter"
 
 		defines {
 			"OTTER_PLATFORM_WINDOWS",
-			"OTTER_BUILD_DLL"
+			"OTTER_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands {
