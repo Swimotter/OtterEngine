@@ -47,6 +47,8 @@
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="src\Otter\Layer.h" />
+    <ClInclude Include="src\Otter\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp">
@@ -59,5 +61,7 @@
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\Otter\Layer.cpp" />
+    <ClCompile Include="src\Otter\LayerStack.cpp" />
   </ItemGroup>
 </Project>

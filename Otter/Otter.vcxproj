@@ -149,6 +149,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Otter\Layer.h" />
+    <ClInclude Include="src\Otter\LayerStack.h" />
     <ClInclude Include="src\Otter.h" />
     <ClInclude Include="src\Otter\Application.h" />
     <ClInclude Include="src\Otter\Core.h" />
@@ -163,6 +165,8 @@
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Otter\Layer.cpp" />
+    <ClCompile Include="src\Otter\LayerStack.cpp" />
     <ClCompile Include="src\Otter\Application.cpp" />
     <ClCompile Include="src\Otter\Log.cpp" />
     <ClCompile Include="src\OtterPCH.cpp">
