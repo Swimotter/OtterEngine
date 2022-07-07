@@ -28,6 +28,13 @@ namespace Otter {
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNCTION(OnWindowClose));
 
+		for (auto item = _layerStack.end(); item != _layerStack.begin();) {
+			(*--item)->OnEvent(e);
+			if (e.handled) {
+				break;
+			}
+		}
+
 		OTTER_CORE_TRACE("{0}", e);
 	}
 

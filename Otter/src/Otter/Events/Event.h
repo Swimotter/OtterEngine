@@ -28,8 +28,9 @@ virtual const char* GetName() const override { return #type; }
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
 	class OTTER_API Event {
-		friend class EventDispatcher;
 	public:
+		bool handled = false;
+
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
@@ -38,26 +39,24 @@ virtual const char* GetName() const override { return #type; }
 		inline bool IsInCategory(EventCategory category) {
 			return GetCategoryFlags() & category;
 		}
-	protected:
-		bool _handled = false;
 	};
 
 	class EventDispatcher {
 		template<typename T>
 		using EventFn = std::function<bool(T&)>;
 	public:
-		EventDispatcher(Event& event) : _Event(event) {}
+		EventDispatcher(Event& event) : _event(event) {}
 
 		template<typename T>
 		bool Dispatch(EventFn<T> func) {
 			if (_Event.GetEventType() == T::GetStaticType()) {
-				_Event._handled = func(*(T*)&_Event);
+				_event.handled = func(*(T*)&_Event);
 				return true;
 			}
 			return false;
 		}
 	private:
-		Event& _Event;
+		Event& _event;
 	};
 
 	inline std::ostream& operator<<(std::ostream& os, const Event& e) {
