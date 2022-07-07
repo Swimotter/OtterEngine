@@ -12,4 +12,8 @@ namespace Otter {
 			delete layer;
 		}
 	}
+
+	void LayerStack::PushLayer(Layer* layer) {
+		_layerInsert = _layers.emplace(_layerInsert, layer);
+	}
 }
