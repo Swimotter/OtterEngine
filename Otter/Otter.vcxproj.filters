@@ -7,8 +7,14 @@
     <Filter Include="Otter\Events">
       <UniqueIdentifier>{578767AC-43EA-F650-EC6F-2F07D8B1C2D3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Otter\ImGui">
+      <UniqueIdentifier>{3D2EA3A0-A9E3-1B96-32D8-156D9E8C129A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -37,6 +43,9 @@
     <ClInclude Include="src\Otter\Events\MouseEvent.h">
       <Filter>Otter\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Otter\ImGui\ImGuiLayer.h">
+      <Filter>Otter\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Otter\Layer.h">
       <Filter>Otter</Filter>
     </ClInclude>
@@ -50,6 +59,12 @@
       <Filter>Otter</Filter>
     </ClInclude>
     <ClInclude Include="src\OtterPCH.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3_loader.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -57,6 +72,9 @@
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp">
       <Filter>Otter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Otter\ImGui\ImGuiLayer.cpp">
+      <Filter>Otter\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Otter\Layer.cpp">
       <Filter>Otter</Filter>
@@ -68,6 +86,9 @@
       <Filter>Otter</Filter>
     </ClCompile>
     <ClCompile Include="src\OtterPCH.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\imgui_impl_opengl3.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>

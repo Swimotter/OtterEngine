@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>OtterPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>OTTER_PLATFORM_WINDOWS;OTTER_BUILD_DLL;GLFW_INCLUDE_NONE;OTTER_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -102,7 +102,7 @@
       <PrecompiledHeaderFile>OtterPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>OTTER_PLATFORM_WINDOWS;OTTER_BUILD_DLL;GLFW_INCLUDE_NONE;OTTER_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -128,7 +128,7 @@
       <PrecompiledHeaderFile>OtterPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>OTTER_PLATFORM_WINDOWS;OTTER_BUILD_DLL;GLFW_INCLUDE_NONE;OTTER_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -157,21 +157,26 @@
     <ClInclude Include="src\Otter\Events\Event.h" />
     <ClInclude Include="src\Otter\Events\KeyEvent.h" />
     <ClInclude Include="src\Otter\Events\MouseEvent.h" />
+    <ClInclude Include="src\Otter\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Otter\Layer.h" />
     <ClInclude Include="src\Otter\LayerStack.h" />
     <ClInclude Include="src\Otter\Log.h" />
     <ClInclude Include="src\Otter\Window.h" />
     <ClInclude Include="src\OtterPCH.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp" />
+    <ClCompile Include="src\Otter\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Otter\Layer.cpp" />
     <ClCompile Include="src\Otter\LayerStack.cpp" />
     <ClCompile Include="src\Otter\Log.cpp" />
     <ClCompile Include="src\OtterPCH.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\imgui_impl_opengl3.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,7 +186,7 @@
     <ProjectReference Include="vendor\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
     </ProjectReference>
-    <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
+    <ProjectReference Include="vendor\ImGui\ImGui.vcxproj">
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
