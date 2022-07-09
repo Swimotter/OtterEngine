@@ -8,7 +8,12 @@ namespace Otter {
 
 	#define BIND_EVENT_FUNCTION(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+	Application* Application::s_instance = nullptr;
+
 	Application::Application() {
+		OTTER_CORE_ASSERT(s_instance, "Application already exists!");
+		s_instance = this;
+
 		_window = std::unique_ptr<Window>(Window::Create());
 		_window->SetEventCallback(BIND_EVENT_FUNCTION(OnEvent));
 	}
@@ -17,10 +22,12 @@ namespace Otter {
 
 	void Application::PushLayer(Layer* layer) {
 		_layerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 	
 	void Application::PushOverlay(Layer* overlay) {
 		_layerStack.PushOverlay(overlay);
+		overlay->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e) {

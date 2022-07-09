@@ -62,7 +62,8 @@ project "Otter"
 		defines {
 			"OTTER_PLATFORM_WINDOWS",
 			"OTTER_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
+			"GLFW_INCLUDE_NONE",
+			"IMGUI_IMPL_OPENGL_LOADER_CUSTOM"
 		}
 
 		postbuildcommands {

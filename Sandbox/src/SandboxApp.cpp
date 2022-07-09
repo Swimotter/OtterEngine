@@ -17,6 +17,7 @@ class Sandbox : public Otter::Application {
 public:
 	Sandbox() {
 		PushLayer(new TestLayer());
+		PushOverlay(new Otter::ImGuiLayer());
 	}
 
 	~Sandbox() {}

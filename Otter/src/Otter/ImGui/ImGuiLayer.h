@@ -4,7 +4,7 @@
 
 namespace Otter {
 
-	class ImGuiLayer : public Layer
+	class OTTER_API ImGuiLayer : public Layer
 	{
 	public:
 		ImGuiLayer();
@@ -14,5 +14,7 @@ namespace Otter {
 		void OnDetach();
 		void OnUpdate();
 		void OnEvent(Event& event);
+	private:
+		float _time = 0;
 	};
 }
