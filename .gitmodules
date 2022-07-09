@@ -4,3 +4,6 @@
 [submodule "Otter/vendor/GLFW"]
 	path = Otter/vendor/GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule "Otter/vendor/imgui"]
+	path = Otter/vendor/imgui
+	url = https://github.com/TheCherno/imgui
