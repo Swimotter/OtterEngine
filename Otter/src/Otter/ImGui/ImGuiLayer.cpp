@@ -79,18 +79,31 @@ namespace Otter {
 	}
 	bool ImGuiLayer::OnMouseButtonPressedEvent(MouseButtonPressedEvent& e)
 	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseDown[e.GetMouseButton()] = true;
+
 		return false;
 	}
 	bool ImGuiLayer::OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e)
 	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseDown[e.GetMouseButton()] = false;
+
 		return false;
 	}
 	bool ImGuiLayer::OnMouseMovedEvent(MouseMovedEvent& e)
 	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MousePos = ImVec2(e.GetX(), e.GetY());
+
 		return false;
 	}
 	bool ImGuiLayer::OnMouseScrolledEvent(MouseScrolledEvent& e)
 	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseWheel += e.GetOffsetY();
+		io.MouseWheelH += e.GetOffsetX();
+
 		return false;
 	}
 	bool ImGuiLayer::OnKeyPressedEvent(KeyPressedEvent& e)
