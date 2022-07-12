@@ -11,5 +11,6 @@ namespace Otter {
 		virtual bool IsMouseButtonPressedImpl(int button) override;
 		virtual float GetMouseXImpl() override;
 		virtual float GetMouseYImpl() override;
+		virtual std::pair<float, float> GetMousePosImpl() override;
 	};
 }

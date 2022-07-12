@@ -18,16 +18,19 @@ namespace Otter {
 	}
 
 	float WindowsInput::GetMouseXImpl() {
-		auto window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow());
-		double xPos, yPos;
-		glfwGetCursorPos(window, &xPos, &yPos);
-		return (float)xPos;
+		auto [xPos, yPos] = GetMousePosImpl();
+		return xPos;
 	}
 
 	float WindowsInput::GetMouseYImpl() {
+		auto [xPos, yPos] = GetMousePosImpl();
+		return yPos;
+	}
+	std::pair<float, float> WindowsInput::GetMousePosImpl()
+	{
 		auto window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow());
 		double xPos, yPos;
 		glfwGetCursorPos(window, &xPos, &yPos);
-		return (float)yPos;
+		return std::pair<float, float>((float)xPos, (float)yPos);
 	}
 }
