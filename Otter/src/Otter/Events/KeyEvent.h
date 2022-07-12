@@ -43,4 +43,17 @@ namespace Otter {
 
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
+
+	class OTTER_API KeyTypedEvent : public KeyEvent {
+	public:
+		KeyTypedEvent(int keycode) : KeyEvent(keycode) {}
+
+		std::string ToString() const override {
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << _keyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+	};
 }
