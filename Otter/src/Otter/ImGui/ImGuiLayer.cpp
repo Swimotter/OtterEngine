@@ -1,8 +1,10 @@
 #include "OtterPCH.h"
 #include "ImGuiLayer.h"
 #include "Platform/OpenGL/imgui_impl_opengl3.h"
-#include "GLFW/glfw3.h"
 #include "Otter/Application.h"
+
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 namespace Otter {
 
@@ -137,6 +139,11 @@ namespace Otter {
 	}
 	bool ImGuiLayer::OnWindowResizeEvent(WindowResizeEvent& e)
 	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.DisplaySize = ImVec2(e.GetWidth(), e.GetHeight());
+		io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
+		glViewport(0, 0, e.GetWidth(), e.GetHeight());
+
 		return false;
 	}
 }
