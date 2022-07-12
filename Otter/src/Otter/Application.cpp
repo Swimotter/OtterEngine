@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "Otter/Events/ApplicationEvent.h"
 #include "Otter/Log.h"
+#include "Otter/Input.h"
 #include <glad/glad.h>
 
 namespace Otter {
@@ -54,6 +55,10 @@ namespace Otter {
 			for (Layer* layer : _layerStack) {
 				layer->OnUpdate();
 			}
+
+			auto [xPos, yPos] = Input::GetMousePos();
+
+			OTTER_CORE_TRACE("{0}, {1}", xPos, yPos);
 
 			_window->OnUpdate();
 		}
