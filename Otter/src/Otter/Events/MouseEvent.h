@@ -27,8 +27,8 @@ namespace Otter {
 	public:
 		MouseScrolledEvent(float offsetX, float offsetY) : _offsetX(offsetX), _offsetY(offsetY) {}
 		
-		inline float GetoffsetX() const { return _offsetX; }
-		inline float GetoffsetY() const { return _offsetY; }
+		inline float GetOffsetX() const { return _offsetX; }
+		inline float GetOffsetY() const { return _offsetY; }
 
 		std::string ToString() const override {
 			std::stringstream ss;
