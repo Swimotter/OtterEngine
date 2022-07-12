@@ -14,9 +14,11 @@ includeDir["GLFW"] = "Otter/vendor/GLFW/include"
 includeDir["Glad"] = "Otter/vendor/Glad/include"
 includeDir["ImGui"] = "Otter/vendor/ImGui"
 
-include "Otter/vendor/GLFW"
-include "Otter/vendor/Glad"
-include "Otter/vendor/ImGui"
+group "Dependencies"
+	include "Otter/vendor/GLFW"
+	include "Otter/vendor/Glad"
+	include "Otter/vendor/ImGui"
+group ""
 
 
 project "Otter"
