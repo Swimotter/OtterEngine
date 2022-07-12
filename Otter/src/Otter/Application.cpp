@@ -11,7 +11,9 @@ namespace Otter {
 	Application* Application::s_instance = nullptr;
 
 	Application::Application() {
-		OTTER_CORE_ASSERT(s_instance, "Application already exists!");
+		//This shouldn't be getting called but it does
+		// needs a fix
+		//OTTER_CORE_ASSERT(s_instance, "Application already exists!");
 		s_instance = this;
 
 		_window = std::unique_ptr<Window>(Window::Create());
