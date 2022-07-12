@@ -108,6 +108,10 @@ namespace Otter {
 	}
 	bool ImGuiLayer::OnKeyPressedEvent(KeyPressedEvent& e)
 	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.KeysDown[e.GetKeyCode()] += e.GetOffsetY();
+		io.MouseWheelH += e.GetOffsetX();
+
 		return false;
 	}
 	bool ImGuiLayer::OnKeyReleasedEvent(KeyReleasedEvent& e)
