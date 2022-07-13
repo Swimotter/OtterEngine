@@ -13,6 +13,7 @@ includeDir = {}
 includeDir["GLFW"] = "Otter/vendor/GLFW/include"
 includeDir["Glad"] = "Otter/vendor/Glad/include"
 includeDir["ImGui"] = "Otter/vendor/ImGui"
+includeDir["glm"] = "Otter/vendor/glm"
 
 group "Dependencies"
 	include "Otter/vendor/GLFW"
@@ -34,7 +35,9 @@ project "Otter"
 
 	files {
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	removefiles {
@@ -46,7 +49,8 @@ project "Otter"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{includeDir.GLFW}",
 		"%{includeDir.Glad}",
-		"%{includeDir.ImGui}"
+		"%{includeDir.ImGui}",
+		"%{includeDir.glm}"
 	}
 
 	links {
@@ -105,7 +109,8 @@ project "Sandbox"
 
 	includedirs {
 		"Otter/vendor/spdlog/include",
-		"Otter/src"
+		"Otter/src",
+		"%{includeDir.glm}"
 	}
 
 	links {
