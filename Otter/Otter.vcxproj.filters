@@ -70,6 +70,8 @@
     </ClInclude>
     <ClInclude Include="src\Otter\Input.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Otter\Keycodes.h" />
+    <ClInclude Include="src\Otter\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp">

@@ -1,6 +1,7 @@
 #include "OtterPCH.h"
 #include "ImGuiLayer.h"
 #include "Platform/OpenGL/imgui_impl_opengl3.h"
+#include "Otter/Keycodes.h"
 #include "Otter/Application.h"
 
 #include <glad/glad.h>
@@ -21,27 +22,27 @@ namespace Otter {
 		io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;
 
 		// very temporary
-		io.KeyMap[ImGuiKey_Tab] = GLFW_KEY_TAB;
-		io.KeyMap[ImGuiKey_LeftArrow] = GLFW_KEY_LEFT;
-		io.KeyMap[ImGuiKey_RightArrow] = GLFW_KEY_RIGHT;
-		io.KeyMap[ImGuiKey_UpArrow] = GLFW_KEY_UP;
-		io.KeyMap[ImGuiKey_DownArrow] = GLFW_KEY_DOWN;
-		io.KeyMap[ImGuiKey_PageUp] = GLFW_KEY_PAGE_UP;
-		io.KeyMap[ImGuiKey_PageDown] = GLFW_KEY_PAGE_DOWN;
-		io.KeyMap[ImGuiKey_Home] = GLFW_KEY_HOME;
-		io.KeyMap[ImGuiKey_End] = GLFW_KEY_END;
-		io.KeyMap[ImGuiKey_Insert] = GLFW_KEY_INSERT;
-		io.KeyMap[ImGuiKey_Delete] = GLFW_KEY_DELETE;
-		io.KeyMap[ImGuiKey_Backspace] = GLFW_KEY_BACKSPACE;
-		io.KeyMap[ImGuiKey_Space] = GLFW_KEY_SPACE;
-		io.KeyMap[ImGuiKey_Enter] = GLFW_KEY_ENTER;
-		io.KeyMap[ImGuiKey_Escape] = GLFW_KEY_ESCAPE;
-		io.KeyMap[ImGuiKey_A] = GLFW_KEY_A;
-		io.KeyMap[ImGuiKey_C] = GLFW_KEY_C;
-		io.KeyMap[ImGuiKey_V] = GLFW_KEY_V;
-		io.KeyMap[ImGuiKey_X] = GLFW_KEY_X;
-		io.KeyMap[ImGuiKey_Y] = GLFW_KEY_Y;
-		io.KeyMap[ImGuiKey_Z] = GLFW_KEY_Z;
+		io.KeyMap[ImGuiKey_Tab] = OTTER_KEY_TAB;
+		io.KeyMap[ImGuiKey_LeftArrow] = OTTER_KEY_LEFT;
+		io.KeyMap[ImGuiKey_RightArrow] = OTTER_KEY_RIGHT;
+		io.KeyMap[ImGuiKey_UpArrow] = OTTER_KEY_UP;
+		io.KeyMap[ImGuiKey_DownArrow] = OTTER_KEY_DOWN;
+		io.KeyMap[ImGuiKey_PageUp] = OTTER_KEY_PAGE_UP;
+		io.KeyMap[ImGuiKey_PageDown] = OTTER_KEY_PAGE_DOWN;
+		io.KeyMap[ImGuiKey_Home] = OTTER_KEY_HOME;
+		io.KeyMap[ImGuiKey_End] = OTTER_KEY_END;
+		io.KeyMap[ImGuiKey_Insert] = OTTER_KEY_INSERT;
+		io.KeyMap[ImGuiKey_Delete] = OTTER_KEY_DELETE;
+		io.KeyMap[ImGuiKey_Backspace] = OTTER_KEY_BACKSPACE;
+		io.KeyMap[ImGuiKey_Space] = OTTER_KEY_SPACE;
+		io.KeyMap[ImGuiKey_Enter] = OTTER_KEY_ENTER;
+		io.KeyMap[ImGuiKey_Escape] = OTTER_KEY_ESCAPE;
+		io.KeyMap[ImGuiKey_A] = OTTER_KEY_A;
+		io.KeyMap[ImGuiKey_C] = OTTER_KEY_C;
+		io.KeyMap[ImGuiKey_V] = OTTER_KEY_V;
+		io.KeyMap[ImGuiKey_X] = OTTER_KEY_X;
+		io.KeyMap[ImGuiKey_Y] = OTTER_KEY_Y;
+		io.KeyMap[ImGuiKey_Z] = OTTER_KEY_Z;
 
 		ImGui_ImplOpenGL3_Init("#version 410");
 	}
@@ -113,10 +114,10 @@ namespace Otter {
 		ImGuiIO& io = ImGui::GetIO();
 		io.KeysDown[e.GetKeycode()] = true;
 
-		io.KeyCtrl = io.KeysDown[GLFW_KEY_LEFT_CONTROL] || io.KeysDown[GLFW_KEY_RIGHT_CONTROL];
-		io.KeyShift = io.KeysDown[GLFW_KEY_LEFT_SHIFT] || io.KeysDown[GLFW_KEY_RIGHT_SHIFT];
-		io.KeyAlt = io.KeysDown[GLFW_KEY_LEFT_ALT] || io.KeysDown[GLFW_KEY_RIGHT_ALT];
-		io.KeySuper = io.KeysDown[GLFW_KEY_LEFT_SUPER] || io.KeysDown[GLFW_KEY_RIGHT_SUPER];
+		io.KeyCtrl = io.KeysDown[OTTER_KEY_LEFT_CONTROL] || io.KeysDown[OTTER_KEY_RIGHT_CONTROL];
+		io.KeyShift = io.KeysDown[OTTER_KEY_LEFT_SHIFT] || io.KeysDown[OTTER_KEY_RIGHT_SHIFT];
+		io.KeyAlt = io.KeysDown[OTTER_KEY_LEFT_ALT] || io.KeysDown[OTTER_KEY_RIGHT_ALT];
+		io.KeySuper = io.KeysDown[OTTER_KEY_LEFT_SUPER] || io.KeysDown[OTTER_KEY_RIGHT_SUPER];
 
 		return false;
 	}

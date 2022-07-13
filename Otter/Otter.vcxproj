@@ -159,9 +159,11 @@
     <ClInclude Include="src\Otter\Events\KeyEvent.h" />
     <ClInclude Include="src\Otter\Events\MouseEvent.h" />
     <ClInclude Include="src\Otter\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Otter\Keycodes.h" />
     <ClInclude Include="src\Otter\Layer.h" />
     <ClInclude Include="src\Otter\LayerStack.h" />
     <ClInclude Include="src\Otter\Log.h" />
+    <ClInclude Include="src\Otter\MouseButtonCodes.h" />
     <ClInclude Include="src\Otter\Window.h" />
     <ClInclude Include="src\OtterPCH.h" />
     <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3.h" />
