@@ -54,10 +54,6 @@ namespace Otter {
 				layer->OnUpdate();
 			}
 
-			auto [xPos, yPos] = Input::GetMousePos();
-
-			OTTER_CORE_TRACE("{0}, {1}", xPos, yPos);
-
 			_window->OnUpdate();
 		}
 	}
