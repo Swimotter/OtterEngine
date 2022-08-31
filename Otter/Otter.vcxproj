@@ -588,6 +588,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp" />
+    <ClCompile Include="src\Otter\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Otter\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Otter\Layer.cpp" />
     <ClCompile Include="src\Otter\LayerStack.cpp" />
