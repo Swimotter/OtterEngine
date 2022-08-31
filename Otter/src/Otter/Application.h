@@ -1,10 +1,11 @@
 #pragma once
 
-#include "Core.h"
-#include "Window.h"
+#include "Otter/Core.h"
+#include "Otter/Window.h"
 #include "Otter/LayerStack.h"
 #include "Otter/Events/Event.h"
 #include "Otter/Events/ApplicationEvent.h"
+#include "Otter/ImGui/ImGuiLayer.h"
 
 namespace Otter {
 
@@ -26,6 +27,7 @@ namespace Otter {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> _window;
+		ImGuiLayer* _ImGuiLayer;
 		bool _running = true;
 		LayerStack _layerStack;
 	private:

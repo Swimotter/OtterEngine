@@ -1,6 +1,5 @@
 #include "OtterPCH.h"
 #include "Application.h"
-#include "Otter/Events/ApplicationEvent.h"
 #include "Otter/Log.h"
 #include "Otter/Input.h"
 #include <glad/glad.h>
@@ -17,6 +16,9 @@ namespace Otter {
 
 		_window = std::unique_ptr<Window>(Window::Create());
 		_window->SetEventCallback(BIND_EVENT_FUNCTION(OnEvent));
+
+		_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(_ImGuiLayer);
 	}
 
 	Application::~Application() {}
@@ -53,6 +55,12 @@ namespace Otter {
 			for (Layer* layer : _layerStack) {
 				layer->OnUpdate();
 			}
+
+			_ImGuiLayer->Begin();
+			for (Layer* layer : _layerStack) {
+				layer->OnImGuiRender();
+			}
+			_ImGuiLayer->End();
 
 			_window->OnUpdate();
 		}
