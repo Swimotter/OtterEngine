@@ -44,7 +44,8 @@ namespace Otter {
 			}
 		}
 
-		OTTER_CORE_TRACE("{0}", e);
+		//log events
+		//OTTER_CORE_TRACE("{0}", e);
 	}
 
 	void Application::Run() {

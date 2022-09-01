@@ -7,7 +7,8 @@ public:
 	void OnUpdate() override {}
 
 	void OnEvent(Otter::Event& event) override {
-		OTTER_TRACE("{0}", event);
+		//log events
+		//OTTER_TRACE("{0}", event);
 	}
 };
 
