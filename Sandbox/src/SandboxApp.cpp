@@ -14,7 +14,7 @@ public:
 class Sandbox : public Otter::Application {
 public:
 	Sandbox() {
-		//PushLayer(new TestLayer());
+		PushLayer(new TestLayer());
 	}
 
 	~Sandbox() {}

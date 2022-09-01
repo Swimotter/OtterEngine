@@ -24,8 +24,10 @@ group ""
 
 project "Otter"
 	location "Otter"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	cppdialect "C++20"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -38,6 +40,10 @@ project "Otter"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
+	}
+
+	defines {
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	removefiles {
@@ -61,8 +67,6 @@ project "Otter"
 	}
 
 	filter "system:windows"
-		cppdialect "C++20"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines {
@@ -72,32 +76,27 @@ project "Otter"
 			"IMGUI_IMPL_OPENGL_LOADER_CUSTOM"
 		}
 
-		postbuildcommands {
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
-		}
-
 	filter "configurations:Debug"
 		defines "OTTER_DEBUG"
-		staticruntime "off"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "OTTER_RELEASE"
-		staticruntime "off"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "OTTER_DIST"
-		staticruntime "off"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++20"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -110,6 +109,7 @@ project "Sandbox"
 	includedirs {
 		"Otter/vendor/spdlog/include",
 		"Otter/src",
+		"Otter/vendor",
 		"%{includeDir.glm}"
 	}
 
@@ -118,8 +118,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++20"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines {
@@ -128,18 +126,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "OTTER_DEBUG"
-		staticruntime "off"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "OTTER_RELEASE"
-		staticruntime "off"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "OTTER_DIST"
-		staticruntime "off"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
