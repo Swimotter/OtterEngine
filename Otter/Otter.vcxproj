@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Otter.h" />
+    <ClInclude Include="src\OtterPCH.h" />
     <ClInclude Include="src\Otter\Application.h" />
     <ClInclude Include="src\Otter\Core.h" />
     <ClInclude Include="src\Otter\EntryPoint.h" />
@@ -156,7 +157,6 @@
     <ClInclude Include="src\Otter\Log.h" />
     <ClInclude Include="src\Otter\MouseButtonCodes.h" />
     <ClInclude Include="src\Otter\Window.h" />
-    <ClInclude Include="src\OtterPCH.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -576,15 +576,15 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\OtterPCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="src\Otter\Application.cpp" />
     <ClCompile Include="src\Otter\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Otter\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Otter\Layer.cpp" />
     <ClCompile Include="src\Otter\LayerStack.cpp" />
     <ClCompile Include="src\Otter\Log.cpp" />
-    <ClCompile Include="src\OtterPCH.cpp">
-      <PrecompiledHeader>Create</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>

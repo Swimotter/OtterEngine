@@ -1,5 +1,13 @@
 #pragma once
 
+/**
+* Access point for external applications to begin engine
+* 
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
 #ifdef OTTER_PLATFORM_WINDOWS
 extern Otter::Application* Otter::CreateApplication();
 

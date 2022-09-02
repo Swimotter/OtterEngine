@@ -90,9 +90,6 @@
     <ClInclude Include="src\Otter\Window.h">
       <Filter>src\Otter</Filter>
     </ClInclude>
-    <ClInclude Include="src\OtterPCH.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Platform\Windows</Filter>
     </ClInclude>
@@ -1344,6 +1341,7 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\OtterPCH.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp">
@@ -1364,14 +1362,12 @@
     <ClCompile Include="src\Otter\Log.cpp">
       <Filter>src\Otter</Filter>
     </ClCompile>
-    <ClCompile Include="src\OtterPCH.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\OtterPCH.cpp" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,13 @@
 #pragma once
 
+/**
+* Precompiled header file
+*
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
 #include <iostream>
 #include <memory>
 #include <utility>

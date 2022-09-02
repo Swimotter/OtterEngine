@@ -1,5 +1,16 @@
 #pragma once
 
+/**
+* Creates required defines for engine to run
+* 
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
+/**
+* @throws OS not supported!if using not using windows
+*/
 #ifdef OTTER_PLATFORM_WINDOWS
 #if OTTER_DYNAMIC_LINK
 	#ifdef OTTER_BUILD_DLL
