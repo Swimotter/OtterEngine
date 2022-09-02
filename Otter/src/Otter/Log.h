@@ -1,11 +1,25 @@
 #pragma once
 
+/**
+* Used to log messages to the console
+* @see https://spdlog.docsforge.com/
+*
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
 #include "Core.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
 
 namespace Otter {
 
+	/**
+	* Handles loggers
+	*
+	* @return std::shared_ptr<spdlog::logger>& These are pointers to the core and client loggers
+	*/
 	class OTTER_API Log {
 	public:
 		static void Init();
