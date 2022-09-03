@@ -16,10 +16,12 @@ namespace Otter {
 	void LayerStack::PushLayer(Layer* layer) {
 		_layers.emplace(_layers.begin() + _layerInsertIndex, layer);
 		_layerInsertIndex++;
+		layer->OnAttach();
 	}
 
 	void LayerStack::PushOverlay(Layer* overlay) {
 		_layers.emplace_back(overlay);
+		overlay->OnAttach();
 	}
 
 	void LayerStack::PopLayer(Layer* layer) {
@@ -27,6 +29,7 @@ namespace Otter {
 		if (item != _layers.end()) {
 			_layers.erase(item);
 			_layerInsertIndex--;
+			layer->OnDetach();
 		}
 	}
 
@@ -34,6 +37,7 @@ namespace Otter {
 		auto item = std::find(_layers.begin(), _layers.end(), overlay);
 		if (item != _layers.end()) {
 			_layers.erase(item);
+			overlay->OnDetach();
 		}
 	}
 }
