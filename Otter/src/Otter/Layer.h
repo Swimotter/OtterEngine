@@ -1,5 +1,15 @@
 #pragma once
 
+/**
+* Layers for use in LayerStack
+* @see LayerStack.h
+* @see Events.h
+*
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
 #include "Otter/Core.h"
 #include "Otter/Events/Event.h"
 

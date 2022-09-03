@@ -1,5 +1,14 @@
 #pragma once
 
+/**
+* LayerStack for use in organizing layers
+* @see Layer.h
+*
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
 #include "Otter/Core.h"
 #include "Layer.h"
 
@@ -10,6 +19,7 @@ namespace Otter {
 		LayerStack();
 		~LayerStack();
 
+		//Adding and removing layers and overlays
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* overlay);
 		void PopLayer(Layer* layer);
