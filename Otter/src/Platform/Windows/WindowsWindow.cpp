@@ -9,6 +9,13 @@ namespace Otter {
 
 	static bool s_GLFWInitialized = false;
 
+	/**
+	* Callback for GLFW to log errors
+	*
+	* @param error This is the id number of the error
+	* @param desc This is the description of the error
+	* @return string This is the error including id and a description
+	*/
 	static void GLFWErrorCallback(int error, const char* desc) {
 		OTTER_CORE_ERROR("GLFW Error ({0}): {1}", error, desc);
 	}
@@ -33,7 +40,7 @@ namespace Otter {
 		OTTER_CORE_INFO("Creating window {0} ({1}, {2})", props.title, props.width, props.height);
 
 		if (!s_GLFWInitialized) {
-			//need to terminate glfw
+			//Need to terminate glfw
 			int success = glfwInit();
 			OTTER_CORE_ASSERT(success, "Could not initialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
@@ -47,6 +54,7 @@ namespace Otter {
 		glfwSetWindowUserPointer(_window, &_data);
 		SetVSync(true);
 
+		//Callbacks to events
 		glfwSetWindowSizeCallback(_window, [](GLFWwindow* window, int width, int height) {
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 			data.width = width;
@@ -118,7 +126,7 @@ namespace Otter {
 				break;
 			}
 			}
-			});
+		});
 	}
 
 	void WindowsWindow::Shutdown() {

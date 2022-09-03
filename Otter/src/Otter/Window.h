@@ -1,11 +1,27 @@
 #pragma once
 
+/**
+* Used to create and get information about the window
+* Implemented per operating system
+* @see WindowsWindow.h
+* @see Event.h
+*
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
 #include "OtterPCH.h"
 #include "Otter/Core.h"
 #include "Otter/Events/Event.h"
 
 namespace Otter {
 
+	/**
+	* Used to give default parameters for a window
+	*
+	* @return WindowProps This returns the default window
+	*/
 	struct WindowProps {
 		std::string title;
 		unsigned int width;
@@ -32,6 +48,12 @@ namespace Otter {
 
 		virtual void* GetNativeWindow() const = 0;
 
+		/**
+		* Creates a new window
+		*
+		* @param props This is the pointer to the default window settings
+		* @return Window* This returns the default window
+		*/
 		static Window* Create(const WindowProps& props = WindowProps());
 	};
 }
