@@ -1,5 +1,15 @@
 #pragma once
 
+/**
+* Checks for inputs and gets information about inputs
+* Inputs are handled per operating system
+* @see WindowsInput.h
+*
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
 #include "Otter/Core.h"
 
 namespace Otter {

@@ -1,5 +1,14 @@
 #pragma once
 
+/**
+* Windows implementation of Input.h
+* @see Input.h
+*
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
 #include "Otter/Input.h"
 
 namespace Otter {
