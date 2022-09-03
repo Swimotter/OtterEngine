@@ -1,5 +1,15 @@
 #pragma once
 
+/**
+* Handles ImGui layers
+* @see Layer.h
+* @see Event.h
+*
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
 #include "Otter/Layer.h"
 #include "Otter/Events/ApplicationEvent.h"
 #include "Otter/Events/KeyEvent.h"

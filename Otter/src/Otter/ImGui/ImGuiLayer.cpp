@@ -17,7 +17,7 @@ namespace Otter {
 	ImGuiLayer::~ImGuiLayer() { }
 
 	void ImGuiLayer::OnAttach() {
-		// Setup Deat ImGui context
+		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
