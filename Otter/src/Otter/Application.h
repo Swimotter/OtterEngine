@@ -1,5 +1,17 @@
 #pragma once
 
+/**
+* Handles the application
+* @see Window.h
+* @see ImGuiLayer.h
+* @see LayerStack.h
+* @see Event.h
+*
+* @author Jackson Rubiano
+* @version 1.0
+* @since 0.0.0-pa.1
+*/
+
 #include "Otter/Core.h"
 #include "Otter/Window.h"
 #include "Otter/LayerStack.h"
