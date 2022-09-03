@@ -3,6 +3,9 @@
 /**
 * Handles all events
 * Events are handled immediately
+* @see ApplicationEvent.h
+* @see KeyEvent.h
+* @see MouseEvent.h
 *
 * @author Jackson Rubiano
 * @version 1.0
