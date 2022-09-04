@@ -8,6 +8,8 @@
 * @since 0.0.0-pa.1
 */
 
+#include "Otter/Log.h"
+
 #include <iostream>
 #include <memory>
 #include <utility>
@@ -18,8 +20,6 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
-
-#include "Otter/Log.h"
 
 //platform specific includes
 #ifdef OTTER_PLATFORM_WINDOWS

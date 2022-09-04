@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "Otter/Log.h"
 #include "Otter/Input.h"
+
 #include <glad/glad.h>
 
 namespace Otter {

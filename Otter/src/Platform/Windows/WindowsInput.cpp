@@ -1,6 +1,7 @@
 #include "OtterPCH.h"
 #include "WindowsInput.h"
 #include "Otter/Application.h"
+
 #include <GLFW/glfw3.h>
 
 namespace Otter {
