@@ -1,7 +1,10 @@
 #pragma once
 
 /**
-* {DESCRIPTION}
+* OpenGL implementation of GraphicsContext
+* @see GraphicsContext.h
+* @see https://www.glfw.org/docs/latest/
+* @see https://github.com/Dav1dde/glad
 *
 * @author Jackson Rubiano
 * @version 1.0

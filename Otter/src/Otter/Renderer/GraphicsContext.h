@@ -1,7 +1,9 @@
 #pragma once
 
 /**
-* {DESCRIPTION}
+* Handles the graphics contexts
+* Implemented per graphics library
+* @see OpenGLContext.h
 * 
 * @author Jackson Rubiano
 * @version 1.0
