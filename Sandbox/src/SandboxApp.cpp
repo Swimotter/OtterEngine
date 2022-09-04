@@ -8,7 +8,7 @@ public:
 
 	void OnEvent(Otter::Event& event) override {
 		//log events
-		OTTER_TRACE("{0}", event);
+		//OTTER_TRACE("{0}", event);
 	}
 };
 

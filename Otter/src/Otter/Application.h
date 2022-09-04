@@ -8,7 +8,7 @@
 * @see Event.h
 *
 * @author Jackson Rubiano
-* @version 1.1
+* @version 1.2
 * @since 0.0.0-pa.1
 */
 
@@ -42,6 +42,8 @@ namespace Otter {
 		ImGuiLayer* _ImGuiLayer;
 		bool _running = true;
 		LayerStack _layerStack;
+
+		unsigned int _vertexArray, _vertexBuffer, _indexBuffer;
 	private:
 		static Application* s_instance;
 	};
