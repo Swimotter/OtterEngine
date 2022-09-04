@@ -1,9 +1,11 @@
 #include "OtterPCH.h"
 #include "WindowsWindow.h"
+
 #include "Otter/Events/ApplicationEvent.h"
 #include "Otter/Events/MouseEvent.h"
 #include "Otter/Events/KeyEvent.h"
-#include <glad/glad.h>
+
+#include "Platform/OpenGL/OpenGLContext.h"
 
 namespace Otter {
 
@@ -48,9 +50,9 @@ namespace Otter {
 		}
 
 		_window = glfwCreateWindow((int)props.width, (int)props.height, _data.title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(_window);
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		OTTER_CORE_ASSERT(status, "Failed to initialize Glad!")
+		_context = new OpenGLContext(_window);
+		_context->Init();
+
 		glfwSetWindowUserPointer(_window, &_data);
 		SetVSync(true);
 
@@ -135,7 +137,7 @@ namespace Otter {
 
 	void WindowsWindow::OnUpdate() {
 		glfwPollEvents();
-		glfwSwapBuffers(_window);
+		_context->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled) {

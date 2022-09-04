@@ -5,11 +5,13 @@
 * @see Window.h
 *
 * @author Jackson Rubiano
-* @version 1.0
+* @version 1.1
 * @since 0.0.0-pa.1
 */
 
 #include "Otter/Window.h"
+#include "Otter/Renderer/GraphicsContext.h"
+
 #include <GLFW/glfw3.h>
 
 namespace Otter {
@@ -48,6 +50,7 @@ namespace Otter {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* _window;
+		GraphicsContext* _context;
 
 		struct WindowData {
 			std::string title;
