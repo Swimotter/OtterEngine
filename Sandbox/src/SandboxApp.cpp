@@ -17,8 +17,6 @@ public:
 	Sandbox() {
 		PushLayer(new TestLayer());
 	}
-
-	~Sandbox() {}
 };
 
 Otter::Application* Otter::CreateApplication() {

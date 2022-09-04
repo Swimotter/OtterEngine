@@ -4,6 +4,4 @@
 namespace Otter {
 
 	Layer::Layer(const std::string& debugName) : _debugName(debugName) {}
-
-	Layer::~Layer() {}
 }

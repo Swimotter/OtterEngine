@@ -21,8 +21,6 @@ namespace Otter {
 		PushOverlay(_ImGuiLayer);
 	}
 
-	Application::~Application() {}
-
 	void Application::PushLayer(Layer* layer) {
 		_layerStack.PushLayer(layer);
 	}
