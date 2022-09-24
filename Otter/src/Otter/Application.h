@@ -6,9 +6,10 @@
 * @see ImGuiLayer.h
 * @see LayerStack.h
 * @see Event.h
+* @see Shader.h
 *
 * @author Jackson Rubiano
-* @version 1.2
+* @version 1.3
 * @since 0.0.0-pa.1
 */
 
@@ -18,6 +19,7 @@
 #include "Otter/Events/Event.h"
 #include "Otter/Events/ApplicationEvent.h"
 #include "Otter/ImGui/ImGuiLayer.h"
+#include "Otter/Renderer/Shader.h"
 
 namespace Otter {
 
@@ -44,6 +46,7 @@ namespace Otter {
 		LayerStack _layerStack;
 
 		unsigned int _vertexArray, _vertexBuffer, _indexBuffer;
+		std::unique_ptr<Shader> m_shader;
 	private:
 		static Application* s_instance;
 	};
