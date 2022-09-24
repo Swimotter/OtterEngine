@@ -157,6 +157,10 @@
     <ClInclude Include="src\Otter\Log.h" />
     <ClInclude Include="src\Otter\MouseButtonCodes.h" />
     <ClInclude Include="src\Otter\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Otter\Renderer\Shader.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="src\Otter\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
       <SubType>
@@ -590,6 +594,7 @@
     <ClCompile Include="src\Otter\Layer.cpp" />
     <ClCompile Include="src\Otter\LayerStack.cpp" />
     <ClCompile Include="src\Otter\Log.cpp" />
+    <ClCompile Include="src\Otter\Renderer\Shader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
       <SubType>
       </SubType>
