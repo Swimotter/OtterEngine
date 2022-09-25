@@ -24,15 +24,14 @@ namespace Otter {
 		glGenVertexArrays(1, &_vertexArray);
 		glBindVertexArray(_vertexArray);
 
-		glGenBuffers(1, &_vertexBuffer);
-		glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
-
 		//Triangle
 		float vertices[3 * 3] = {
 			-0.5f, -0.5f, 0.0f,
 			 0.5f, -0.5f, 0.0f,
 			 0.0f,  0.5f, 0.0f
 		};
+
+		m_vertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 

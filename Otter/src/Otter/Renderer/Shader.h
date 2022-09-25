@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
- 
+
 /**
 * Will be moved to OpenGL specific files in the future
 * Handles the shader through the OpenGL pipeline
