@@ -1,7 +1,7 @@
 #pragma once
- 
+
 /**
-* {DESCRIPTION}
+* Class to decide on the renderer used
 *
 * @author Jackson Rubiano
 * @version 1.0

@@ -161,6 +161,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="src\Otter\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Otter\Renderer\Renderer.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="src\Otter\Renderer\Shader.h">
       <SubType>
       </SubType>
@@ -603,6 +607,10 @@
     <ClCompile Include="src\Otter\LayerStack.cpp" />
     <ClCompile Include="src\Otter\Log.cpp" />
     <ClCompile Include="src\Otter\Renderer\Buffer.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Otter\Renderer\Renderer.cpp">
       <SubType>
       </SubType>
     </ClCompile>
