@@ -1347,6 +1347,7 @@
     <ClInclude Include="src\Otter\Renderer\Shader.h" />
     <ClInclude Include="src\Otter\Renderer\Buffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Otter\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Otter\Application.cpp">
@@ -1378,5 +1379,6 @@
     <ClCompile Include="src\Otter\Renderer\Shader.cpp" />
     <ClCompile Include="src\Otter\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Otter\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>

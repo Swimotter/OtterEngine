@@ -7,9 +7,10 @@
 * @see LayerStack.h
 * @see Event.h
 * @see Shader.h
+* @see Buffer.h
 *
 * @author Jackson Rubiano
-* @version 1.4
+* @version 1.5
 * @since 0.0.0-pa.1
 */
 
@@ -46,9 +47,10 @@ namespace Otter {
 		bool _running = true;
 		LayerStack _layerStack;
 
-		unsigned int _vertexArray, _indexBuffer;
+		unsigned int _vertexArray;
 		std::unique_ptr<Shader> m_shader;
 		std::unique_ptr<VertexBuffer> m_vertexBuffer;
+		std::unique_ptr<IndexBuffer> m_indexBuffer;
 	private:
 		static Application* s_instance;
 	};
